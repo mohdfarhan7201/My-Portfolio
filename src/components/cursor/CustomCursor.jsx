@@ -6,10 +6,15 @@ function CustomCursor() {
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
+    // Detect touch device
+    const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    if (isTouch) return;
+
     const move = (e) => {
       setPos({ x: e.clientX, y: e.clientY });
       setVisible(true);
     };
+
 
     const handleHover = () => setHovered(true);
     const handleUnhover = () => setHovered(false);

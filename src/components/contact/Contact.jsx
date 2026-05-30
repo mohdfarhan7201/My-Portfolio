@@ -27,26 +27,26 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-[80vh] flex items-center px-6 py-32 bg-black overflow-hidden"
+      className="min-h-[80vh] flex items-center px-6 py-20 md:py-32 bg-black"
     >
       <div ref={ref} className="max-w-4xl mx-auto text-center w-full">
-        <p className="text-zinc-500 tracking-[8px] uppercase text-xs mb-8">
+        <p className="text-zinc-500 tracking-[6px] md:tracking-[8px] uppercase text-[10px] md:text-xs mb-6 md:mb-8">
           Contact
         </p>
 
-        <h2 className="text-6xl md:text-8xl font-black text-gradient leading-none">
+        <h2 className="text-4xl md:text-6xl lg:text-8xl font-black text-gradient leading-tight md:leading-none">
           Let’s start <br /> a project.
         </h2>
 
-        <p className="mt-12 text-zinc-400 text-lg md:text-xl max-w-xl mx-auto font-light leading-relaxed">
+        <p className="mt-8 md:mt-12 text-zinc-400 text-base md:text-lg lg:text-xl max-w-xl mx-auto font-light leading-relaxed px-4">
           I’m currently available for freelance work and full-time opportunities.
           Let's create something extraordinary together.
         </p>
 
-        <div className="mt-16 flex flex-col items-center gap-8">
+        <div className="mt-12 md:mt-16 flex flex-col items-center gap-6 md:gap-8">
           <a
             href="mailto:mohdfarhan.dev@gmail.com"
-            className="group relative px-12 py-5 overflow-hidden rounded-full border border-white/20 text-sm font-bold uppercase tracking-widest transition-all hover:border-white"
+            className="group relative px-10 py-4 md:px-12 md:py-5 overflow-hidden rounded-full border border-white/20 text-[10px] md:text-sm font-bold uppercase tracking-widest transition-all hover:border-white"
           >
             <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
               Get in touch
@@ -54,12 +54,12 @@ function Contact() {
             <div className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 group-hover:translate-x-0" />
           </a>
 
-          <div className="text-zinc-600 font-mono text-sm tracking-widest">
+          <div className="text-zinc-600 font-mono text-[10px] md:text-sm tracking-widest">
             farhan.dev@portfolio.com
           </div>
-
         </div>
       </div>
+
 
 
     </section>
