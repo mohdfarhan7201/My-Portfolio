@@ -27,41 +27,38 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-[80vh] flex items-center px-6 py-20 md:py-32 bg-black"
+      className="min-h-[80vh] flex items-center px-6 md:px-24 lg:px-32 py-12 md:py-32 bg-black"
     >
-      <div ref={ref} className="max-w-4xl mx-auto text-center w-full">
-        <p className="text-zinc-500 tracking-[6px] md:tracking-[8px] uppercase text-[10px] md:text-xs mb-6 md:mb-8">
+      <div ref={ref} className="max-w-5xl mx-auto text-center w-full">
+        <p className="text-zinc-500 tracking-[5px] md:tracking-[12px] uppercase text-[10px] md:text-sm mb-6 md:mb-10 font-accent">
           Contact
         </p>
 
-        <h2 className="text-4xl md:text-6xl lg:text-8xl font-black text-gradient leading-tight md:leading-none">
+        <h2 className="text-5xl md:text-8xl lg:text-[120px] font-bold text-gradient leading-[0.9] font-heading">
           Let’s start <br /> a project.
         </h2>
 
-        <p className="mt-8 md:mt-12 text-zinc-400 text-base md:text-lg lg:text-xl max-w-xl mx-auto font-light leading-relaxed px-4">
+        <p className="mt-10 md:mt-16 text-zinc-400 text-base md:text-xl lg:text-2xl max-w-2xl mx-auto font-normal leading-relaxed px-4">
           I’m currently available for freelance work and full-time opportunities.
           Let's create something extraordinary together.
         </p>
 
-        <div className="mt-12 md:mt-16 flex flex-col items-center gap-6 md:gap-8">
+        <div className="mt-12 md:mt-24 flex flex-col items-center gap-8 md:gap-12">
           <a
             href="mailto:mohdfarhan.dev@gmail.com"
-            className="group relative px-10 py-4 md:px-12 md:py-5 overflow-hidden rounded-full border border-white/20 text-[10px] md:text-sm font-bold uppercase tracking-widest transition-all hover:border-white"
+            className="group relative px-12 py-5 md:px-20 md:py-8 overflow-hidden rounded-full border border-white/10 text-[10px] md:text-base font-bold uppercase tracking-[5px] transition-all hover:border-white font-accent"
           >
             <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
               Get in touch
             </span>
-            <div className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 group-hover:translate-x-0" />
+            <div className="absolute inset-0 -translate-x-full bg-white transition-transform duration-500 group-hover:translate-x-0" />
           </a>
 
-          <div className="text-zinc-600 font-mono text-[10px] md:text-sm tracking-widest">
+          <div className="text-zinc-700 hover:text-zinc-400 transition-colors cursor-pointer font-mono text-[10px] md:text-base tracking-[5px] font-accent">
             farhan.dev@portfolio.com
           </div>
         </div>
       </div>
-
-
-
     </section>
   );
 }

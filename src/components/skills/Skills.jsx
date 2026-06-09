@@ -34,32 +34,31 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen flex items-center px-6 py-20 md:py-32 bg-black"
+      className="min-h-screen flex items-center px-6 md:px-24 lg:px-32 py-12 md:py-32 bg-black"
     >
-      <div ref={ref} className="max-w-6xl mx-auto w-full">
-        <p className="text-zinc-500 tracking-[6px] md:tracking-[8px] uppercase text-[10px] md:text-xs mb-4 md:mb-6">
+      <div ref={ref} className="max-w-7xl mx-auto w-full">
+        <p className="text-zinc-500 tracking-[5px] md:tracking-[10px] uppercase text-[10px] md:text-sm mb-4 md:mb-8 font-accent">
           Stack
         </p>
 
-        <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-gradient">
+        <h2 className="text-4xl md:text-6xl lg:text-8xl font-bold text-gradient font-heading leading-tight">
           Tech I master.
         </h2>
 
 
-        <div className="mt-12 md:mt-16 flex flex-wrap gap-3 md:gap-6">
+        <div className="mt-12 md:mt-20 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
           {skills.map((skill) => (
             <div
               key={skill}
-              className="skill-tag px-5 py-2.5 md:px-8 md:py-4 rounded-xl md:rounded-2xl border border-white/5 bg-zinc-900/30 text-zinc-400 hover:text-white hover:border-white/20 transition-all duration-300 hover:bg-zinc-900 cursor-pointer text-sm md:text-lg font-medium"
+              className="skill-tag px-6 py-4 md:px-10 md:py-8 rounded-2xl md:rounded-3xl border border-white/5 bg-zinc-900/20 text-zinc-400 hover:text-white hover:border-white/20 transition-all duration-500 hover:bg-zinc-900/60 cursor-pointer text-sm md:text-xl font-medium font-accent text-center shadow-lg hover:shadow-white/5 group relative overflow-hidden"
             >
-              {skill}
+              <span className="relative z-10">{skill}</span>
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
           ))}
         </div>
 
       </div>
-
-
     </section>
   );
 }
