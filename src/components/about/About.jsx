@@ -41,7 +41,7 @@ function About() {
                         Introduction
                     </p>
 
-                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-gradient font-heading">
+                    <h2 className="text-4xl md:text-6xl lg:text-6xl font-bold leading-[1.1] text-gradient font-heading">
                         I build digital <br className="hidden lg:block" /> experiences <br className="hidden lg:block" /> that matter.
                     </h2>
 
@@ -60,7 +60,7 @@ function About() {
                     </div>
                 </div>
 
-                <div className="relative group mt-0">
+                <div className="relative group mt-0 lg:-mt-40">
                     <div className="absolute -inset-2 bg-gradient-to-r from-white/10 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-40 transition duration-1000"></div>
                     <div className="relative bg-zinc-900/30 backdrop-blur-3xl border border-white/5 p-8 md:p-12 lg:p-16 rounded-3xl overflow-x-auto shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
                         <pre className="text-[11px] md:text-sm lg:text-base text-zinc-400 font-mono leading-loose">

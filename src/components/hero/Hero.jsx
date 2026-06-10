@@ -72,7 +72,7 @@ function Hero() {
                     </p>
                 </div>
 
-                <h1 className="text-gradient text-[48px] sm:text-[70px] md:text-[80px] lg:text-[110px] font-extrabold tracking-tighter leading-[0.9] md:leading-[0.8] font-heading">
+                <h1 className="text-gradient text-[48px] sm:text-[70px] md:text-[80px] lg:text-[80px] font-extrabold tracking-tighter leading-[0.9] md:leading-[0.8] font-heading">
                     MOHD FARHAN
                 </h1>
 
