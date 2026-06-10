@@ -11,15 +11,25 @@ html {
   background: var(--bg);
 }
 
+body,
+a,
+button,
+[role="button"],
+input,
+textarea,
+select {
+  cursor: none !important;
+}
+
 body {
   margin: 0;
   background: var(--bg);
   color: white;
-  cursor: none;
   overflow-x: hidden;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
