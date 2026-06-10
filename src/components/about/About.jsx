@@ -33,7 +33,7 @@ function About() {
     return (
         <section
             id="about"
-            className="min-h-screen md:min-h-screen flex items-center px-6 md:px-24 lg:px-32 py-12 md:py-32 bg-black overflow-hidden"
+            className="min-h-screen md:min-h-screen flex items-center px-6 md:px-24 lg:px-32  md:py-32 bg-black overflow-hidden"
         >
             <div ref={ref} className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 lg:gap-32 items-center">
                 <div>
@@ -50,7 +50,7 @@ function About() {
                         I bridge the gap between design and development by using modern tools like React, GSAP, and Tailwind.
                     </p>
 
-                    <div className="mt-10 md:mt-16 flex flex-wrap gap-8 md:gap-16 border-t border-white/5 pt-10 md:pt-16">
+                    <div className="mt-10 md:mt-16 flex  gap-6 md:gap-16 border-t border-white/5 pt-10 md:pt-16">
                         {stats.map((stat) => (
                             <div key={stat.label} className="group">
                                 <h3 className="text-4xl md:text-5xl font-bold text-white mb-2 font-heading group-hover:text-zinc-300 transition-colors">{stat.value}</h3>

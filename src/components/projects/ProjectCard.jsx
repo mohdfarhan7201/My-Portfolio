@@ -7,10 +7,10 @@ function ProjectCard({ project }) {
         <div
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className="group relative overflow-hidden rounded-3xl border border-white/5 bg-zinc-900/10 transition-all duration-700 hover:scale-[1.03] hover:bg-zinc-900/30 shadow-2xl"
+            className="group relative overflow-hidden rounded-3xl border border-white/5 bg-zinc-900/10 transition-all duration-700 hover:scale-[1.03] hover:bg-zinc-900/30 shadow-2xl h-full flex flex-col"
         >
             {/* IMAGE */}
-            <div className="h-[250px] md:h-[350px] overflow-hidden">
+            <div className="h-[200px] md:h-[300px] lg:h-[250px] overflow-hidden flex-shrink-0">
 
                 <img
                     src={project.image}
@@ -19,17 +19,17 @@ function ProjectCard({ project }) {
                 />
             </div>
 
-            <div className="p-8 md:p-12 text-left bg-gradient-to-t from-black via-black/90 to-transparent">
-                <h3 className="text-2xl md:text-4xl font-bold font-heading">{project.title}</h3>
+            <div className="p-8 md:p-10 flex flex-col flex-grow text-left bg-gradient-to-t from-black via-black/90 to-transparent">
+                <h3 className="text-2xl md:text-3xl font-bold font-heading">{project.title}</h3>
 
-                <p className="mt-4 text-sm md:text-lg text-zinc-400 leading-relaxed font-normal max-w-lg">
+                <p className="mt-4 text-sm md:text-base text-zinc-400 leading-relaxed font-normal max-w-lg mb-6">
                     {project.description}
                 </p>
 
 
 
                 {/* CATEGORY & TECH */}
-                <div className="mt-6 md:mt-10 flex flex-wrap gap-3 items-center">
+                <div className="mt-auto flex flex-wrap gap-3 items-center">
                     <span className="rounded-md bg-white text-black px-3 py-1 text-[10px] md:text-xs font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(255,255,255,0.3)]">
                         {project.category}
                     </span>
@@ -44,6 +44,7 @@ function ProjectCard({ project }) {
                 </div>
 
             </div>
+
 
             {/* GLOW EFFECT */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-gradient-to-br from-white/5 to-transparent blur-3xl" />

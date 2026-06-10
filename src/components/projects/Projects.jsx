@@ -51,7 +51,7 @@ function Projects() {
             Curated Portfolio
           </p>
 
-          <h2 className="text-4xl md:text-6xl lg:text-8xl font-bold text-gradient font-heading leading-tight mb-4">
+          <h2 className="text-4xl md:text-6xl lg:text-6xl font-bold text-gradient font-heading leading-tight mb-4">
             Selected Work
           </h2>
 
@@ -95,12 +95,13 @@ function Projects() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
-                className="project-item"
+                className="project-item h-full"
               >
                 <ProjectCard project={project} />
               </motion.div>
             ))}
           </AnimatePresence>
+
         </motion.div>
       </div>
     </section>
