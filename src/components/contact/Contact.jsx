@@ -45,7 +45,7 @@ function Contact() {
 
         <div className="mt-10 md:mt-16 flex flex-col items-center gap-6 md:gap-10">
           <a
-            href="mailto:mohdfarhan.dev@gmail.com"
+            href="mailto:mohd.farhan.7201@gmail.com"
             className="group relative px-10 py-5 md:px-14 md:py-6 overflow-hidden rounded-full border border-white/10 text-[10px] md:text-sm font-bold uppercase tracking-[4px] transition-all hover:border-white font-accent"
           >
             <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
@@ -55,7 +55,7 @@ function Contact() {
           </a>
 
           <div className="text-zinc-600 hover:text-zinc-400 transition-colors cursor-pointer font-mono text-[9px] md:text-xs tracking-[3px] font-accent">
-            farhan.dev@portfolio.com
+            mohd.farhan.7201@gmail.com
           </div>
         </div>
       </div>

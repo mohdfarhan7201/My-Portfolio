@@ -2,8 +2,8 @@ import { FaGithub, FaLinkedinIn, FaXTwitter, FaInstagram } from "react-icons/fa6
 
 function Footer() {
   const socials = [
-    { name: "Github", icon: <FaGithub />, url: "#" },
-    { name: "LinkedIn", icon: <FaLinkedinIn />, url: "#" },
+    { name: "Github", icon: <FaGithub />, url: "https://github.com/mohdfarhan7201" },
+    { name: "LinkedIn", icon: <FaLinkedinIn />, url: "https://www.linkedin.com/in/mohd-farhan-4721a4295/" },
     { name: "Instagram", icon: <FaInstagram />, url: "#" },
   ];
 
@@ -33,9 +33,9 @@ function Footer() {
           © {new Date().getFullYear()} MOHD FARHAN
         </p>
         <div className="h-px w-10 bg-white/10" />
-        <p className="text-zinc-800 text-[8px] tracking-[4px] uppercase">
+        {/* <p className="text-zinc-800 text-[8px] tracking-[4px] uppercase">
           Build with ❤️ & Antigravity
-        </p>
+        </p> */}
       </div>
     </footer>
   );
