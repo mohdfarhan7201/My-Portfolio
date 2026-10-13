@@ -7,101 +7,124 @@ import ProjectCard from "./ProjectCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const categories = ["All", "Basic", "Standard", "Advance"];
+const categories = ["All", "Featured", "Advance", "Standard"];
 
 function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const ref = useRef(null);
+  const sectionRef = useRef(null);
+  const headerRef = useRef(null);
+  const gridRef = useRef(null);
 
-  const filteredProjects = activeCategory === "All"
-    ? projects
-    : projects.filter(p => p.category === activeCategory);
+  const filteredProjects =
+    activeCategory === "All"
+      ? projects
+      : projects.filter(
+          (p) =>
+            p.category === activeCategory ||
+            p.categories?.includes(activeCategory)
+        );
 
   useEffect(() => {
-    gsap.fromTo(
-      ".project-header",
-      { opacity: 0, y: 100 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ref.current,
-          start: "top 70%",
-        },
-      }
-    );
-  }, []);
+    const ctx = gsap.context(() => {
+      // Header scroll animation
+      gsap.fromTo(
+        headerRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
 
-  // Refresh ScrollTrigger when filteredProjects changes to avoid issues with sections below
-  useEffect(() => {
-    ScrollTrigger.refresh();
+      // Grid items scroll stagger
+      gsap.fromTo(
+        ".project-card-wrap",
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, [filteredProjects]);
 
   return (
     <section
+      ref={sectionRef}
       id="projects"
-      ref={ref}
-      className="min-h-screen px-6 md:px-24 lg:px-32 py-12 md:py-32 bg-black overflow-hidden"
+      className="py-16 md:py-24 px-6 md:px-20 lg:px-28 bg-black relative"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="project-header">
-          <p className="text-zinc-500 tracking-[5px] md:tracking-[10px] uppercase text-[10px] md:text-sm mb-4 md:mb-8 font-accent">
-            Curated Portfolio
+      <div className="max-w-7xl mx-auto w-full">
+        {/* Header */}
+        <div ref={headerRef} className="max-w-3xl mb-12 md:mb-16">
+          <p className="text-zinc-500 tracking-[5px] md:tracking-[8px] uppercase text-[10px] md:text-xs mb-4 font-accent font-medium">
+            Featured Creations
           </p>
 
-          <h2 className="text-4xl md:text-6xl lg:text-6xl font-bold text-gradient font-heading leading-tight mb-4">
-            Selected Work
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gradient font-heading leading-tight mb-4">
+            Selected Work.
           </h2>
 
-          <p className="max-w-2xl text-zinc-500 text-sm md:text-lg mb-12 md:mb-20 font-normal leading-relaxed">
-            Exploring the intersection of design and technology through three stages of evolution: from foundational concepts to advanced immersive experiences.
+          <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+            Real-world applications crafted with a focus on responsive UI architectures, fluid GSAP animation, and performance optimization.
           </p>
 
-
-          {/* Filter Tabs */}
-          <div className="flex flex-wrap gap-4 md:gap-8 mb-12 md:mb-24">
+          {/* Filter Pills */}
+          <div className="flex flex-wrap gap-2.5 sm:gap-4 mt-8">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`relative px-4 py-2 text-sm md:text-lg font-medium transition-colors duration-300 ${activeCategory === cat ? "text-white" : "text-zinc-500 hover:text-zinc-300"
-                  }`}
+                className={`relative px-4 py-1.5 sm:px-5 sm:py-2 text-xs sm:text-sm font-medium transition-all duration-300 rounded-full border ${
+                  activeCategory === cat
+                    ? "text-white border-white/40 bg-white/10 shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+                    : "text-zinc-500 border-white/5 hover:text-zinc-300 hover:border-white/10"
+                }`}
               >
                 {cat}
-                {activeCategory === cat && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)]"
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  />
-                )}
               </button>
             ))}
           </div>
         </div>
 
+        {/* Projects Grid */}
         <motion.div
+          ref={gridRef}
           layout
-          className="grid gap-8 md:gap-10 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3"
         >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
               <motion.div
                 layout
                 key={project.id}
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4 }}
-                className="project-item h-full"
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.35 }}
+                className="project-card-wrap h-full"
               >
                 <ProjectCard project={project} />
               </motion.div>
             ))}
           </AnimatePresence>
-
         </motion.div>
       </div>
     </section>

@@ -2,96 +2,250 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import {
-  SiReact, SiNextdotjs, SiThreedotjs, SiTailwindcss,
-  SiNodedotjs, SiMongodb, SiFramer, SiPostgresql,
-  SiTypescript, SiGit, SiFigma,
-  SiGreensock
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+  SiHtml5,
+  SiTailwindcss,
+  SiGreensock,
+  SiFramer,
+  SiBootstrap,
+  SiMongodb,
+  SiGit,
+  SiGithub,
+  SiVercel,
+  SiGoogleanalytics,
+  SiGooglesearchconsole,
 } from "react-icons/si";
-import { FaPalette } from "react-icons/fa";
+import {
+  FaBolt,
+  FaMagnifyingGlass,
+  FaChartLine,
+  FaArrowTrendUp,
+  FaFileCode,
+  FaNetworkWired,
+  FaCss3Alt,
+} from "react-icons/fa6";
+import { VscVscode } from "react-icons/vsc";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Skills() {
-  const ref = useRef(null);
-
-  const skills = [
-    { name: "React", icon: <SiReact className="text-[#61DAFB]" /> },
-    { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
-    { name: "Three.js", icon: <SiThreedotjs className="text-white" /> },
-    { name: "GSAP", icon: <SiGreensock className="text-[#88CE02]" /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#06B6D4]" /> },
-    { name: "Node.js", icon: <SiNodedotjs className="text-[#339933]" /> },
-    { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
-    { name: "Framer Motion", icon: <SiFramer className="text-white" /> },
-    { name: "PostgreSQL", icon: <SiPostgresql className="text-[#4169E1]" /> },
-    { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6]" /> },
-    { name: "Git", icon: <SiGit className="text-[#F05032]" /> },
-    { name: "UI/UX", icon: <SiFigma className="text-[#F24E1E]" /> }
-  ];
+  const sectionRef = useRef(null);
+  const cardsRef = useRef([]);
 
   useEffect(() => {
-    gsap.fromTo(
-      ".skill-tag",
-      { opacity: 0, scale: 0.8, y: 20 },
-      {
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: 0.05,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: ref.current,
-          start: "top 80%",
-        },
-      }
-    );
+    const ctx = gsap.context(() => {
+      // Staggered scroll animation for skills bento cards
+      gsap.fromTo(
+        cardsRef.current,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.9,
+          stagger: 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
+
+  const frontendSkills = [
+    { name: "React.js", icon: <SiReact className="text-[#61DAFB]" /> },
+    { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
+    { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6]" /> },
+    { name: "JavaScript", icon: <SiJavascript className="text-[#F7DF1E]" /> },
+    { name: "HTML5", icon: <SiHtml5 className="text-[#E34F26]" /> },
+    { name: "CSS3", icon: <FaCss3Alt className="text-[#1572B6]" /> },
+    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#06B6D4]" /> },
+    { name: "GSAP", icon: <SiGreensock className="text-[#88CE02]" /> },
+    { name: "Framer Motion", icon: <SiFramer className="text-white" /> },
+    { name: "Bootstrap", icon: <SiBootstrap className="text-[#7952B3]" /> },
+  ];
+
+  const seoSkills = [
+    { name: "Technical SEO Audits", icon: <FaMagnifyingGlass className="text-[#F59E0B]" /> },
+    { name: "Core Web Vitals", icon: <FaBolt className="text-[#EC4899]" /> },
+    { name: "Google Search Console", icon: <SiGooglesearchconsole className="text-[#4285F4]" /> },
+    { name: "Google Analytics 4", icon: <SiGoogleanalytics className="text-[#E37400]" /> },
+    { name: "On-Page & Off-Page SEO", icon: <FaChartLine className="text-[#10B981]" /> },
+    { name: "Keyword & Competitor Analysis", icon: <FaArrowTrendUp className="text-[#38BDF8]" /> },
+  ];
+
+  const backendTools = [
+    { name: "Next.js Backend", icon: <SiNextdotjs className="text-white" /> },
+    { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
+    { name: "Git & GitHub", icon: <SiGithub className="text-white" /> },
+    { name: "Vercel Deployment", icon: <SiVercel className="text-white" /> },
+    { name: "VS Code", icon: <VscVscode className="text-[#007ACC]" /> },
+    { name: "REST API Integration", icon: <FaNetworkWired className="text-[#A855F7]" /> },
+  ];
 
   return (
     <section
+      ref={sectionRef}
       id="skills"
-      className="min-h-screen flex items-center px-6 md:px-24 lg:px-32 py-12 md:py-32 bg-black"
+      className="py-16 md:py-24 px-6 md:px-20 lg:px-28 bg-black relative"
     >
-      <div ref={ref} className="max-w-7xl mx-auto w-full">
-        <p className="text-zinc-500 tracking-[5px] md:tracking-[10px] uppercase text-[10px] md:text-sm mb-4 md:mb-8 font-accent">
-          Stack
-        </p>
-
-        <h2 className="text-4xl md:text-6xl lg:text-6xl font-bold text-gradient font-heading leading-tight">
-          Tech I master.
-        </h2>
-
-
-        <div className="mt-12 md:mt-20 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-8">
-          {skills.map((skill) => (
-            <div
-              key={skill.name}
-              className="skill-tag group relative flex flex-col items-center justify-center gap-4 px-6 py-8 md:px-10 md:py-12 rounded-2xl md:rounded-3xl border border-white/5 bg-zinc-900/20 transition-all duration-500 hover:bg-zinc-900/40 hover:border-white/20 cursor-pointer shadow-xl overflow-hidden"
-            >
-              {/* Icon Container */}
-              <div className="text-4xl md:text-6xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
-                {skill.icon}
-              </div>
-
-              {/* Skill Name */}
-              <span className="text-zinc-400 group-hover:text-white transition-colors duration-300 text-sm md:text-lg font-medium font-accent uppercase tracking-widest">
-                {skill.name}
-              </span>
-
-              {/* Shine Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-              {/* Bottom Border Accent */}
-              <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-white/20 transition-all duration-500 group-hover:w-full" />
-            </div>
-          ))}
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="max-w-2xl mb-12 md:mb-16">
+          <p className="text-zinc-500 tracking-[5px] md:tracking-[8px] uppercase text-[10px] md:text-xs mb-4 font-accent font-medium">
+            Core Competencies
+          </p>
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gradient font-heading leading-tight">
+            Capabilities & Stack.
+          </h2>
+          <p className="text-zinc-400 text-sm sm:text-base mt-4 leading-relaxed">
+            Organized into specialized engineering and search optimization domains.
+          </p>
         </div>
 
+        {/* Bento Grid Layout - Non-inline, beautifully categorized */}
+        <div className="grid lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
+          {/* Card 1: Frontend & Animation (Takes 6 cols) */}
+          <div
+            ref={(el) => (cardsRef.current[0] = el)}
+            className="lg:col-span-6 rounded-3xl border border-white/10 bg-zinc-900/30 backdrop-blur-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-500 group shadow-2xl"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-accent">
+                    Category 01
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white font-heading mt-1">
+                    Frontend & Creative Motion
+                  </h3>
+                </div>
+                <div className="p-3 rounded-2xl bg-white/5 border border-white/10 text-white">
+                  <FaFileCode className="text-xl" />
+                </div>
+              </div>
+
+              <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
+                Building responsive, interactive user experiences with modular component architectures and fluid motion.
+              </p>
+
+              <div className="grid grid-cols-2 gap-3">
+                {frontendSkills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="flex items-center gap-3 p-3 rounded-xl bg-black/40 border border-white/5 hover:border-white/20 transition-all duration-300"
+                  >
+                    <span className="text-xl">{skill.icon}</span>
+                    <span className="text-xs font-medium text-zinc-300 font-accent tracking-wide">
+                      {skill.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
+              <span>Modern Standards</span>
+              <span className="text-white">ES6+ & Type-Safe</span>
+            </div>
+          </div>
+
+          {/* Right Column: Stacked Cards (Takes 6 cols) */}
+          <div className="lg:col-span-6 flex flex-col gap-6 md:gap-8">
+            {/* Card 2: SEO & Analytics */}
+            <div
+              ref={(el) => (cardsRef.current[1] = el)}
+              className="rounded-3xl border border-white/10 bg-zinc-900/30 backdrop-blur-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-500 group shadow-2xl"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-accent">
+                      Category 02
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white font-heading mt-1">
+                      Search Engine Optimization
+                    </h3>
+                  </div>
+                  <div className="p-3 rounded-2xl bg-white/5 border border-white/10 text-white">
+                    <FaArrowTrendUp className="text-xl" />
+                  </div>
+                </div>
+
+                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
+                  Technical audits, Core Web Vitals performance tuning, and search visibility optimization.
+                </p>
+
+                <div className="grid grid-cols-2 gap-3">
+                  {seoSkills.map((skill) => (
+                    <div
+                      key={skill.name}
+                      className="flex items-center gap-3 p-3 rounded-xl bg-black/40 border border-white/5 hover:border-white/20 transition-all duration-300"
+                    >
+                      <span className="text-lg">{skill.icon}</span>
+                      <span className="text-xs font-medium text-zinc-300 font-accent tracking-wide">
+                        {skill.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
+                <span className="flex items-center gap-2 text-emerald-400">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  Lighthouse 95+ Audit Ready
+                </span>
+                <span>Organic Growth</span>
+              </div>
+            </div>
+
+            {/* Card 3: Backend & DevOps Tools */}
+            <div
+              ref={(el) => (cardsRef.current[2] = el)}
+              className="rounded-3xl border border-white/10 bg-zinc-900/30 backdrop-blur-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-500 group shadow-2xl"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-accent">
+                      Category 03
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white font-heading mt-1">
+                      Backend & Developer Tools
+                    </h3>
+                  </div>
+                  <div className="p-3 rounded-2xl bg-white/5 border border-white/10 text-white">
+                    <FaNetworkWired className="text-xl" />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {backendTools.map((tool) => (
+                    <div
+                      key={tool.name}
+                      className="flex items-center gap-2.5 p-3 rounded-xl bg-black/40 border border-white/5 hover:border-white/20 transition-all duration-300"
+                    >
+                      <span className="text-lg">{tool.icon}</span>
+                      <span className="text-xs font-medium text-zinc-300 font-accent tracking-wide">
+                        {tool.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
 }
 
 export default Skills;
-

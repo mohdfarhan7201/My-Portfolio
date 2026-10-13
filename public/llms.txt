@@ -1,0 +1,24 @@
+# Mohd Farhan - Portfolio & Developer Summary
+> Web Developer & SEO Executive based in Gorakhpur, Uttar Pradesh, India.
+
+## Professional Summary
+Mohd Farhan is a professional Web Developer and SEO Executive skilled in modern reactive web development, frontend architectures, animation systems, and search engine optimization. He builds fast, responsive, and search-ranking digital platforms.
+
+## Core Technical Skills
+- Frontend: HTML5, CSS3, JavaScript (ES6+), React.js, Next.js, TypeScript, Tailwind CSS, GSAP Motion, Framer Motion, Bootstrap.
+- Backend & DevOps: Next.js API/Server Actions, MongoDB, Git, GitHub, Vercel, VS Code, REST API Integration.
+- Search Engine Optimization (SEO): Technical SEO, On-Page SEO, Off-Page SEO, Local SEO, Keyword Research, Metadata Optimization, XML Sitemaps, Robots.txt, Canonical Tags, Core Web Vitals (LCP, INP, CLS), Google Search Console, Google Analytics 4 (GA4).
+
+## Work Experience
+- Web Development Intern at Shine Infosolutions (15 July 2026 – Present, Gorakhpur, UP). Builds responsive UI components, implements GSAP/Framer animations, and drives website optimization and SEO.
+
+## Key Projects
+1. Healthcare Application (React.js, Tailwind CSS, Framer Motion): Modern medical and healthcare interface with interactive appointment workflows and responsive layouts.
+2. Chocolate E-Commerce Platform (JavaScript, GSAP, HTML5, CSS3): Interactive luxury product showcase with fluid GSAP animations, deployed on Vercel.
+
+## Contact & Links
+- Email: mohd.farhan.7201@gmail.com
+- Phone: +91 83038 77102
+- GitHub: https://github.com/mohdfarhan7201
+- LinkedIn: https://www.linkedin.com/in/mohd-farhan-4721a4295/
+- Location: Gorakhpur, Uttar Pradesh, India

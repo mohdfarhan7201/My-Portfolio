@@ -7,8 +7,23 @@
 }
 
 html {
-  scroll-behavior: smooth;
   background: var(--bg);
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body,
@@ -30,7 +45,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
@@ -41,16 +55,16 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #27272a;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #52525b;
 }
 
 section {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 80px;
 }
 
 ::selection {
@@ -60,13 +74,28 @@ section {
 
 .glass {
   background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
