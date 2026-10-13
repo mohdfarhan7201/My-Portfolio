@@ -45,7 +45,7 @@ function Contact() {
       className="py-12 sm:py-20 md:py-24 px-4 sm:px-10 md:px-20 lg:px-28 bg-black relative w-full overflow-hidden"
     >
       <div ref={contentRef} className="max-w-5xl mx-auto text-center w-full">
-        <p className="text-zinc-500 tracking-[3px] sm:tracking-[6px] uppercase text-[10px] sm:text-xs mb-3 font-accent font-medium">
+        <p className="text-zinc-400 tracking-[3px] sm:tracking-[6px] uppercase text-[10px] sm:text-xs mb-3 font-accent font-medium">
           Get In Touch
         </p>
 
@@ -53,7 +53,7 @@ function Contact() {
           Let’s build <br className="hidden sm:inline" /> something iconic.
         </h2>
 
-        <p className="mt-4 sm:mt-6 text-zinc-400 text-xs sm:text-base md:text-lg max-w-xl mx-auto font-normal leading-relaxed">
+        <p className="mt-4 sm:mt-6 text-zinc-300 text-xs sm:text-base md:text-lg max-w-xl mx-auto font-normal leading-relaxed">
           Available for frontend engineering, full-stack projects, and search engine optimization consulting.
         </p>
 
@@ -93,10 +93,10 @@ function Contact() {
             <div className="p-2 sm:p-2.5 rounded-xl bg-white/5 text-white">
               <FaEnvelope className="text-sm sm:text-base" />
             </div>
-            <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-500 font-accent">
+            <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-400 font-accent">
               Email
             </span>
-            <span className="text-[11px] sm:text-xs font-mono text-zinc-300 break-all">
+            <span className="text-[11px] sm:text-xs font-mono text-zinc-200 break-all">
               mohd.farhan.7201@gmail.com
             </span>
           </div>
@@ -108,10 +108,10 @@ function Contact() {
             <div className="p-2 sm:p-2.5 rounded-xl bg-white/5 text-white">
               <FaPhone className="text-sm sm:text-base" />
             </div>
-            <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-500 font-accent">
+            <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-400 font-accent">
               Direct Phone
             </span>
-            <span className="text-[11px] sm:text-xs font-mono text-zinc-300 hover:text-white transition-colors">
+            <span className="text-[11px] sm:text-xs font-mono text-zinc-200 hover:text-white transition-colors">
               +91 83038 77102
             </span>
           </a>
@@ -120,10 +120,10 @@ function Contact() {
             <div className="p-2 sm:p-2.5 rounded-xl bg-white/5 text-white">
               <FaLocationDot className="text-sm sm:text-base" />
             </div>
-            <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-500 font-accent">
+            <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-400 font-accent">
               Location
             </span>
-            <span className="text-[11px] sm:text-xs font-mono text-zinc-300">
+            <span className="text-[11px] sm:text-xs font-mono text-zinc-200">
               Gorakhpur, UP, India
             </span>
           </div>

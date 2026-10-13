@@ -75,7 +75,7 @@ function About() {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
         {/* Left Column: Narrative */}
         <div ref={leftColRef} className="lg:col-span-7 flex flex-col items-start w-full">
-          <p className="text-zinc-500 tracking-[3px] sm:tracking-[6px] uppercase text-[10px] sm:text-xs mb-3 sm:mb-4 font-accent font-medium">
+          <p className="text-zinc-400 tracking-[3px] sm:tracking-[6px] uppercase text-[10px] sm:text-xs mb-3 sm:mb-4 font-accent font-medium">
             Core Philosophy
           </p>
 
@@ -83,11 +83,11 @@ function About() {
             Where frontend craftsmanship meets search visibility.
           </h2>
 
-          <p className="mt-4 sm:mt-6 text-zinc-400 text-sm sm:text-base md:text-lg leading-relaxed font-normal">
+          <p className="mt-4 sm:mt-6 text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed font-normal">
             A beautiful website that no one visits is a wasted asset. And a high-ranking page that fails to engage loses customers immediately.
           </p>
 
-          <p className="mt-2.5 text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-normal">
+          <p className="mt-2.5 text-zinc-300 text-xs sm:text-sm md:text-base leading-relaxed font-normal">
             I solve both sides of this equation: engineering pixel-perfect, responsive web experiences with modern tools like <span className="text-white font-medium">React, Next.js, and GSAP</span>, while ensuring every page structure is tuned to rank organically on search engines.
           </p>
 
@@ -105,7 +105,7 @@ function About() {
                   <h3 className="text-xs sm:text-sm font-semibold text-white mb-1 font-heading">
                     {item.title}
                   </h3>
-                  <p className="text-[11px] sm:text-xs text-zinc-400 leading-normal">
+                  <p className="text-[11px] sm:text-xs text-zinc-300 leading-normal">
                     {item.desc}
                   </p>
                 </div>

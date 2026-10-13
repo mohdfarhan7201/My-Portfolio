@@ -1,10 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Home from "./pages/Home";
-import Loader from "./components/ui/Loader";
-import PageTransition from "./components/ui/PageTransition";
 import Navbar from "./components/layout/Navbar";
 import CustomCursor from "./components/cursor/CustomCursor";
-import useSound from "./hooks/useSound";
 import Lenis from "lenis";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -12,12 +9,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
-  useSound();
-
   useEffect(() => {
-    // Initialize smooth scrolling with Lenis immediately
+    // Initialize buttery smooth scrolling with Lenis immediately
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -40,7 +33,7 @@ function App() {
     // Refresh ScrollTrigger once DOM layout stabilizes
     const timer = setTimeout(() => {
       ScrollTrigger.refresh();
-    }, 250);
+    }, 150);
 
     return () => {
       clearTimeout(timer);
@@ -51,13 +44,9 @@ function App() {
 
   return (
     <>
-      {/* Non-blocking loader overlay: ensures immediate FCP/LCP for Lighthouse & crawlers */}
-      {loading && <Loader onFinish={() => setLoading(false)} />}
       <CustomCursor />
       <Navbar />
-      <PageTransition>
-        <Home />
-      </PageTransition>
+      <Home />
     </>
   );
 }

@@ -57,11 +57,11 @@ function TechTicker() {
         {[...techItems, ...techItems].map((item, idx) => (
           <div
             key={idx}
-            className="flex items-center gap-2.5 sm:gap-3.5 text-zinc-400 hover:text-white transition-colors duration-300 font-accent uppercase text-[11px] sm:text-xs md:text-sm tracking-[2px] sm:tracking-[3px]"
+            className="flex items-center gap-2.5 sm:gap-3.5 text-zinc-300 hover:text-white transition-colors duration-300 font-accent uppercase text-[11px] sm:text-xs md:text-sm tracking-[2px] sm:tracking-[3px]"
           >
             <span className="text-lg sm:text-xl md:text-2xl">{item.icon}</span>
             <span className="font-semibold">{item.name}</span>
-            <span className="text-zinc-700 text-xs">•</span>
+            <span className="text-zinc-500 text-xs">•</span>
           </div>
         ))}
       </div>

@@ -46,6 +46,8 @@ function Hero() {
       >
         <img
           src="/images/toji.webp"
+          width="1920"
+          height="1080"
           className="h-full w-full object-cover md:object-center object-[70%_center] opacity-40 sm:opacity-45"
           alt="Mohd Farhan - Web Developer and SEO Executive Portfolio Hero Background"
           loading="eager"

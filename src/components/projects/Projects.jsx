@@ -92,10 +92,11 @@ function Projects() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
+                aria-label={`Filter projects by ${cat}`}
                 className={`relative px-3.5 py-1.5 sm:px-5 sm:py-2 text-xs sm:text-sm font-medium transition-all duration-300 rounded-full border ${
                   activeCategory === cat
                     ? "text-white border-white/40 bg-white/10 shadow-[0_0_15px_rgba(255,255,255,0.15)]"
-                    : "text-zinc-500 border-white/5 hover:text-zinc-300 hover:border-white/10"
+                    : "text-zinc-300 border-white/10 hover:text-white hover:border-white/20"
                 }`}
               >
                 {cat}

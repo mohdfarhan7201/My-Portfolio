@@ -14,6 +14,8 @@ function ProjectCard({ project }) {
       <div className="relative h-[200px] sm:h-[230px] md:h-[250px] overflow-hidden flex-shrink-0 bg-zinc-950">
         <img
           src={project.image}
+          width="800"
+          height="500"
           alt={`${project.title} developed by Mohd Farhan - Web Developer and SEO Executive`}
           loading="lazy"
           decoding="async"
@@ -37,10 +39,10 @@ function ProjectCard({ project }) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="GitHub Repository"
-              className="p-1.5 sm:p-2 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-zinc-300 hover:text-white hover:border-white/40 transition-all"
+              aria-label={`${project.title} GitHub repository`}
+              className="p-2 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-zinc-200 hover:text-white hover:border-white transition-all"
             >
-              <FaGithub className="text-xs sm:text-sm" />
+              <FaGithub className="text-sm" />
             </a>
           )}
           {project.liveUrl && project.liveUrl !== "#" && (
@@ -48,10 +50,10 @@ function ProjectCard({ project }) {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Live Demo"
-              className="p-1.5 sm:p-2 rounded-full bg-white text-black hover:bg-zinc-200 transition-all"
+              aria-label={`${project.title} live demo`}
+              className="p-2 rounded-full bg-white text-black hover:bg-zinc-200 transition-all"
             >
-              <FaArrowUpRightFromSquare className="text-[10px] sm:text-xs" />
+              <FaArrowUpRightFromSquare className="text-xs" />
             </a>
           )}
         </div>
@@ -63,7 +65,7 @@ function ProjectCard({ project }) {
           {project.title}
         </h3>
 
-        <p className="mt-2 sm:mt-2.5 text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal mb-4 sm:mb-6 flex-grow">
+        <p className="mt-2 sm:mt-2.5 text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal mb-4 sm:mb-6 flex-grow">
           {project.description}
         </p>
 

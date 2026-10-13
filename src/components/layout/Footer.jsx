@@ -17,13 +17,13 @@ function Footer() {
             href={social.url}
             target={social.url.startsWith("http") ? "_blank" : undefined}
             rel={social.url.startsWith("http") ? "noopener noreferrer" : undefined}
-            className="group relative flex flex-col items-center gap-2 text-zinc-500 hover:text-white transition-all duration-300"
+            className="group relative flex flex-col items-center gap-2 text-zinc-400 hover:text-white transition-all duration-300"
             aria-label={social.name}
           >
             <span className="text-2xl md:text-3xl transform transition-transform duration-300 group-hover:-translate-y-2 group-hover:scale-110">
               {social.icon}
             </span>
-            <span className="text-[10px] uppercase tracking-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <span className="text-[10px] uppercase tracking-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 text-zinc-300">
               {social.name}
             </span>
           </a>
@@ -31,11 +31,11 @@ function Footer() {
       </div>
 
       <div className="flex flex-col items-center gap-2 text-center">
-        <p className="text-zinc-500 text-[10px] md:text-xs tracking-[4px] uppercase font-light">
+        <p className="text-zinc-300 text-[10px] md:text-xs tracking-[4px] uppercase font-light">
           © {new Date().getFullYear()} MOHD FARHAN
         </p>
         <div className="h-px w-10 bg-white/10" />
-        <p className="text-zinc-600 text-[9px] md:text-[11px] tracking-[3px] uppercase font-accent">
+        <p className="text-zinc-400 text-[9px] md:text-[11px] tracking-[3px] uppercase font-accent">
           Web Developer & SEO Executive • Gorakhpur, UP
         </p>
       </div>

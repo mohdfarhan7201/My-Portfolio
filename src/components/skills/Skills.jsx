@@ -97,13 +97,13 @@ function Skills() {
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="max-w-2xl mb-8 sm:mb-14">
-          <p className="text-zinc-500 tracking-[3px] sm:tracking-[6px] uppercase text-[10px] sm:text-xs mb-3 font-accent font-medium">
+          <p className="text-zinc-400 tracking-[3px] sm:tracking-[6px] uppercase text-[10px] sm:text-xs mb-3 font-accent font-medium">
             Core Competencies
           </p>
           <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gradient font-heading leading-tight break-words">
             Capabilities & Stack.
           </h2>
-          <p className="text-zinc-400 text-xs sm:text-sm md:text-base mt-2.5 sm:mt-3 leading-relaxed">
+          <p className="text-zinc-300 text-xs sm:text-sm md:text-base mt-2.5 sm:mt-3 leading-relaxed">
             Organized into specialized engineering and search optimization domains.
           </p>
         </div>
@@ -118,7 +118,7 @@ function Skills() {
             <div>
               <div className="flex items-center justify-between mb-4 sm:mb-6">
                 <div>
-                  <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-500 font-accent">
+                  <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-400 font-accent">
                     Category 01
                   </span>
                   <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-heading mt-0.5">
@@ -130,7 +130,7 @@ function Skills() {
                 </div>
               </div>
 
-              <p className="text-[11px] sm:text-xs md:text-sm text-zinc-400 leading-relaxed mb-4 sm:mb-6">
+              <p className="text-[11px] sm:text-xs md:text-sm text-zinc-300 leading-relaxed mb-4 sm:mb-6">
                 Building responsive, interactive user experiences with modular component architectures and fluid motion.
               </p>
 
@@ -141,7 +141,7 @@ function Skills() {
                     className="flex items-center gap-2 sm:gap-2.5 p-2 sm:p-2.5 rounded-xl bg-black/50 border border-white/5 hover:border-white/20 transition-all duration-300"
                   >
                     <span className="text-base sm:text-xl flex-shrink-0">{skill.icon}</span>
-                    <span className="text-[11px] sm:text-xs font-medium text-zinc-300 font-accent tracking-wide truncate">
+                    <span className="text-[11px] sm:text-xs font-medium text-zinc-200 font-accent tracking-wide truncate">
                       {skill.name}
                     </span>
                   </div>
@@ -165,7 +165,7 @@ function Skills() {
               <div>
                 <div className="flex items-center justify-between mb-3 sm:mb-4">
                   <div>
-                    <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-500 font-accent">
+                    <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-400 font-accent">
                       Category 02
                     </span>
                     <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-heading mt-0.5">
@@ -177,7 +177,7 @@ function Skills() {
                   </div>
                 </div>
 
-                <p className="text-[11px] sm:text-xs md:text-sm text-zinc-400 leading-relaxed mb-4 sm:mb-6">
+                <p className="text-[11px] sm:text-xs md:text-sm text-zinc-300 leading-relaxed mb-4 sm:mb-6">
                   Technical audits, Core Web Vitals performance tuning, and search visibility optimization.
                 </p>
 
@@ -188,7 +188,7 @@ function Skills() {
                       className="flex items-center gap-2 sm:gap-2.5 p-2 sm:p-2.5 rounded-xl bg-black/50 border border-white/5 hover:border-white/20 transition-all duration-300"
                     >
                       <span className="text-base sm:text-lg flex-shrink-0">{skill.icon}</span>
-                      <span className="text-[11px] sm:text-xs font-medium text-zinc-300 font-accent tracking-wide truncate">
+                      <span className="text-[11px] sm:text-xs font-medium text-zinc-200 font-accent tracking-wide truncate">
                         {skill.name}
                       </span>
                     </div>
@@ -196,7 +196,7 @@ function Skills() {
                 </div>
               </div>
 
-              <div className="mt-5 pt-3.5 border-t border-white/5 flex items-center justify-between text-[10px] sm:text-[11px] text-zinc-500 font-mono">
+              <div className="mt-5 pt-3.5 border-t border-white/5 flex items-center justify-between text-[10px] sm:text-[11px] text-zinc-400 font-mono">
                 <span className="flex items-center gap-1.5 text-emerald-400">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   Lighthouse 95+ Ready
@@ -213,7 +213,7 @@ function Skills() {
               <div>
                 <div className="flex items-center justify-between mb-3 sm:mb-4">
                   <div>
-                    <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-500 font-accent">
+                    <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-400 font-accent">
                       Category 03
                     </span>
                     <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-heading mt-0.5">
