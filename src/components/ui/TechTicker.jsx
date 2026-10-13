@@ -36,7 +36,6 @@ function TechTicker() {
   useEffect(() => {
     if (!tickerRef.current) return;
 
-    // Subtle scroll-driven scrub acceleration
     gsap.to(tickerRef.current, {
       xPercent: -15,
       ease: "none",
@@ -50,17 +49,17 @@ function TechTicker() {
   }, []);
 
   return (
-    <div className="relative w-full py-8 md:py-12 bg-black border-y border-white/5 overflow-hidden select-none">
-      <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+    <div className="relative w-full max-w-full py-5 sm:py-8 md:py-10 bg-black border-y border-white/5 overflow-hidden select-none">
+      <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
-      <div ref={tickerRef} className="animate-marquee flex items-center whitespace-nowrap gap-10 md:gap-16">
+      <div ref={tickerRef} className="animate-marquee flex items-center whitespace-nowrap gap-8 sm:gap-14">
         {[...techItems, ...techItems].map((item, idx) => (
           <div
             key={idx}
-            className="flex items-center gap-3.5 text-zinc-400 hover:text-white transition-colors duration-300 font-accent uppercase text-xs md:text-sm tracking-[3px]"
+            className="flex items-center gap-2.5 sm:gap-3.5 text-zinc-400 hover:text-white transition-colors duration-300 font-accent uppercase text-[11px] sm:text-xs md:text-sm tracking-[2px] sm:tracking-[3px]"
           >
-            <span className="text-xl md:text-2xl">{item.icon}</span>
+            <span className="text-lg sm:text-xl md:text-2xl">{item.icon}</span>
             <span className="font-semibold">{item.name}</span>
             <span className="text-zinc-700 text-xs">•</span>
           </div>

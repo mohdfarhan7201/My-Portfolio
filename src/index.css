@@ -8,6 +8,8 @@
 
 html {
   background: var(--bg);
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 html.lenis, html.lenis body {
@@ -40,6 +42,8 @@ body {
   margin: 0;
   background: var(--bg);
   color: white;
+  width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -64,7 +68,7 @@ body {
 }
 
 section {
-  scroll-margin-top: 80px;
+  scroll-margin-top: 70px;
 }
 
 ::selection {
@@ -98,4 +102,13 @@ section {
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+/* Hide scrollbar for tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

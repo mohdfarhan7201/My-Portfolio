@@ -37,20 +37,19 @@ function Skills() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Staggered scroll animation for skills bento cards
       gsap.fromTo(
         cardsRef.current,
-        { y: 50, opacity: 0 },
+        { y: 35, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.9,
-          stagger: 0.2,
-          ease: "power3.out",
+          duration: 0.7,
+          stagger: 0.15,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 75%",
-            toggleActions: "play none none reverse",
+            start: "top 85%",
+            once: true,
           },
         }
       );
@@ -85,64 +84,64 @@ function Skills() {
     { name: "Next.js Backend", icon: <SiNextdotjs className="text-white" /> },
     { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
     { name: "Git & GitHub", icon: <SiGithub className="text-white" /> },
-    { name: "Vercel Deployment", icon: <SiVercel className="text-white" /> },
+    { name: "Vercel Deploy", icon: <SiVercel className="text-white" /> },
     { name: "VS Code", icon: <VscVscode className="text-[#007ACC]" /> },
-    { name: "REST API Integration", icon: <FaNetworkWired className="text-[#A855F7]" /> },
+    { name: "REST APIs", icon: <FaNetworkWired className="text-[#A855F7]" /> },
   ];
 
   return (
     <section
       ref={sectionRef}
       id="skills"
-      className="py-16 md:py-24 px-6 md:px-20 lg:px-28 bg-black relative"
+      className="py-12 sm:py-20 md:py-24 px-4 sm:px-10 md:px-20 lg:px-28 bg-black relative w-full overflow-hidden"
     >
       <div className="max-w-7xl mx-auto w-full">
-        <div className="max-w-2xl mb-12 md:mb-16">
-          <p className="text-zinc-500 tracking-[5px] md:tracking-[8px] uppercase text-[10px] md:text-xs mb-4 font-accent font-medium">
+        <div className="max-w-2xl mb-8 sm:mb-14">
+          <p className="text-zinc-500 tracking-[3px] sm:tracking-[6px] uppercase text-[10px] sm:text-xs mb-3 font-accent font-medium">
             Core Competencies
           </p>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gradient font-heading leading-tight">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gradient font-heading leading-tight break-words">
             Capabilities & Stack.
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base mt-4 leading-relaxed">
+          <p className="text-zinc-400 text-xs sm:text-sm md:text-base mt-2.5 sm:mt-3 leading-relaxed">
             Organized into specialized engineering and search optimization domains.
           </p>
         </div>
 
-        {/* Bento Grid Layout - Non-inline, beautifully categorized */}
-        <div className="grid lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
-          {/* Card 1: Frontend & Animation (Takes 6 cols) */}
+        {/* Bento Grid Layout */}
+        <div className="grid lg:grid-cols-12 gap-5 sm:gap-8 items-stretch w-full">
+          {/* Card 1: Frontend & Animation */}
           <div
             ref={(el) => (cardsRef.current[0] = el)}
-            className="lg:col-span-6 rounded-3xl border border-white/10 bg-zinc-900/30 backdrop-blur-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-500 group shadow-2xl"
+            className="lg:col-span-6 rounded-2xl sm:rounded-3xl border border-white/10 bg-zinc-900/30 backdrop-blur-2xl p-4 sm:p-7 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-300 group shadow-2xl"
           >
             <div>
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between mb-4 sm:mb-6">
                 <div>
-                  <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-accent">
+                  <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-500 font-accent">
                     Category 01
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white font-heading mt-1">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-heading mt-0.5">
                     Frontend & Creative Motion
                   </h3>
                 </div>
-                <div className="p-3 rounded-2xl bg-white/5 border border-white/10 text-white">
-                  <FaFileCode className="text-xl" />
+                <div className="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-white">
+                  <FaFileCode className="text-base sm:text-xl" />
                 </div>
               </div>
 
-              <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
+              <p className="text-[11px] sm:text-xs md:text-sm text-zinc-400 leading-relaxed mb-4 sm:mb-6">
                 Building responsive, interactive user experiences with modular component architectures and fluid motion.
               </p>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
                 {frontendSkills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="flex items-center gap-3 p-3 rounded-xl bg-black/40 border border-white/5 hover:border-white/20 transition-all duration-300"
+                    className="flex items-center gap-2 sm:gap-2.5 p-2 sm:p-2.5 rounded-xl bg-black/50 border border-white/5 hover:border-white/20 transition-all duration-300"
                   >
-                    <span className="text-xl">{skill.icon}</span>
-                    <span className="text-xs font-medium text-zinc-300 font-accent tracking-wide">
+                    <span className="text-base sm:text-xl flex-shrink-0">{skill.icon}</span>
+                    <span className="text-[11px] sm:text-xs font-medium text-zinc-300 font-accent tracking-wide truncate">
                       {skill.name}
                     </span>
                   </div>
@@ -150,46 +149,46 @@ function Skills() {
               </div>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
+            <div className="mt-6 pt-3.5 border-t border-white/5 flex items-center justify-between text-[10px] sm:text-[11px] text-zinc-500 font-mono">
               <span>Modern Standards</span>
               <span className="text-white">ES6+ & Type-Safe</span>
             </div>
           </div>
 
-          {/* Right Column: Stacked Cards (Takes 6 cols) */}
-          <div className="lg:col-span-6 flex flex-col gap-6 md:gap-8">
+          {/* Right Column: Stacked Cards */}
+          <div className="lg:col-span-6 flex flex-col gap-5 sm:gap-8 w-full">
             {/* Card 2: SEO & Analytics */}
             <div
               ref={(el) => (cardsRef.current[1] = el)}
-              className="rounded-3xl border border-white/10 bg-zinc-900/30 backdrop-blur-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-500 group shadow-2xl"
+              className="rounded-2xl sm:rounded-3xl border border-white/10 bg-zinc-900/30 backdrop-blur-2xl p-4 sm:p-7 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-300 group shadow-2xl"
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
                   <div>
-                    <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-accent">
+                    <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-500 font-accent">
                       Category 02
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white font-heading mt-1">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-heading mt-0.5">
                       Search Engine Optimization
                     </h3>
                   </div>
-                  <div className="p-3 rounded-2xl bg-white/5 border border-white/10 text-white">
-                    <FaArrowTrendUp className="text-xl" />
+                  <div className="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-white">
+                    <FaArrowTrendUp className="text-base sm:text-xl" />
                   </div>
                 </div>
 
-                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
+                <p className="text-[11px] sm:text-xs md:text-sm text-zinc-400 leading-relaxed mb-4 sm:mb-6">
                   Technical audits, Core Web Vitals performance tuning, and search visibility optimization.
                 </p>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
                   {seoSkills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="flex items-center gap-3 p-3 rounded-xl bg-black/40 border border-white/5 hover:border-white/20 transition-all duration-300"
+                      className="flex items-center gap-2 sm:gap-2.5 p-2 sm:p-2.5 rounded-xl bg-black/50 border border-white/5 hover:border-white/20 transition-all duration-300"
                     >
-                      <span className="text-lg">{skill.icon}</span>
-                      <span className="text-xs font-medium text-zinc-300 font-accent tracking-wide">
+                      <span className="text-base sm:text-lg flex-shrink-0">{skill.icon}</span>
+                      <span className="text-[11px] sm:text-xs font-medium text-zinc-300 font-accent tracking-wide truncate">
                         {skill.name}
                       </span>
                     </div>
@@ -197,43 +196,43 @@ function Skills() {
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
-                <span className="flex items-center gap-2 text-emerald-400">
+              <div className="mt-5 pt-3.5 border-t border-white/5 flex items-center justify-between text-[10px] sm:text-[11px] text-zinc-500 font-mono">
+                <span className="flex items-center gap-1.5 text-emerald-400">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Lighthouse 95+ Audit Ready
+                  Lighthouse 95+ Ready
                 </span>
                 <span>Organic Growth</span>
               </div>
             </div>
 
-            {/* Card 3: Backend & DevOps Tools */}
+            {/* Card 3: Backend & Developer Tools */}
             <div
               ref={(el) => (cardsRef.current[2] = el)}
-              className="rounded-3xl border border-white/10 bg-zinc-900/30 backdrop-blur-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-500 group shadow-2xl"
+              className="rounded-2xl sm:rounded-3xl border border-white/10 bg-zinc-900/30 backdrop-blur-2xl p-4 sm:p-7 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-300 group shadow-2xl"
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
                   <div>
-                    <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-accent">
+                    <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-500 font-accent">
                       Category 03
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white font-heading mt-1">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-heading mt-0.5">
                       Backend & Developer Tools
                     </h3>
                   </div>
-                  <div className="p-3 rounded-2xl bg-white/5 border border-white/10 text-white">
-                    <FaNetworkWired className="text-xl" />
+                  <div className="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-white">
+                    <FaNetworkWired className="text-base sm:text-xl" />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-2.5">
                   {backendTools.map((tool) => (
                     <div
                       key={tool.name}
-                      className="flex items-center gap-2.5 p-3 rounded-xl bg-black/40 border border-white/5 hover:border-white/20 transition-all duration-300"
+                      className="flex items-center gap-2 p-2 sm:p-2.5 rounded-xl bg-black/50 border border-white/5 hover:border-white/20 transition-all duration-300"
                     >
-                      <span className="text-lg">{tool.icon}</span>
-                      <span className="text-xs font-medium text-zinc-300 font-accent tracking-wide">
+                      <span className="text-base sm:text-lg flex-shrink-0">{tool.icon}</span>
+                      <span className="text-[11px] sm:text-xs font-medium text-zinc-300 font-accent tracking-wide truncate">
                         {tool.name}
                       </span>
                     </div>

@@ -9,8 +9,8 @@ function Footer() {
   ];
 
   return (
-    <footer className="py-20 bg-black flex flex-col items-center gap-10 border-t border-white/5">
-      <div className="flex gap-8 md:gap-12">
+    <footer className="py-12 sm:py-20 px-4 bg-black flex flex-col items-center gap-8 sm:gap-10 border-t border-white/5 w-full">
+      <div className="flex gap-6 sm:gap-10">
         {socials.map((social) => (
           <a
             key={social.name}
