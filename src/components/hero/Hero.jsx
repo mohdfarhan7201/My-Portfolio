@@ -8,27 +8,33 @@ function Hero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        textRef.current,
-        { y: 25, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: "power2.out", delay: 0.1 }
-      );
+      gsap.from(textRef.current, {
+        y: 18,
+        duration: 0.7,
+        ease: "power2.out",
+      });
     }, heroRef);
 
     return () => ctx.revert();
   }, []);
 
   useEffect(() => {
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+
+    let rafId;
     const move = (e) => {
-      setPos({ x: e.clientX, y: e.clientY });
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        setPos({ x: e.clientX, y: e.clientY });
+        rafId = null;
+      });
     };
 
-    if (window.innerWidth < 768) {
-      setPos({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
-    }
-
-    window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
+    window.addEventListener("mousemove", move, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", move);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
@@ -51,17 +57,18 @@ function Hero() {
           className="h-full w-full object-cover md:object-center object-[70%_center] opacity-40 sm:opacity-45"
           alt="Mohd Farhan - Web Developer and SEO Executive Portfolio Hero Background"
           loading="eager"
+          fetchpriority="high"
           decoding="async"
         />
       </div>
 
-      {/* Dynamic Radial Spotlight Mask */}
+      {/* Dynamic Radial Spotlight Mask (Desktop Only) */}
       <div
-        className="absolute inset-0 z-10 pointer-events-none"
+        className="absolute inset-0 z-10 pointer-events-none hidden md:block"
         style={{
           backgroundImage: "url(/images/toji.webp)",
           backgroundSize: "cover",
-          backgroundPosition: window.innerWidth < 768 ? "70% center" : "center",
+          backgroundPosition: "center",
           filter: "grayscale(1) brightness(0.35)",
           maskImage: `radial-gradient(circle 260px at ${pos.x}px ${pos.y}px, transparent 0%, black 100%)`,
           WebkitMaskImage: `radial-gradient(circle 260px at ${pos.x}px ${pos.y}px, transparent 0%, black 100%)`,

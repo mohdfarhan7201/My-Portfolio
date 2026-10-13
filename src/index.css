@@ -28,14 +28,16 @@ html.lenis, html.lenis body {
   overflow: hidden;
 }
 
-body,
-a,
-button,
-[role="button"],
-input,
-textarea,
-select {
-  cursor: none !important;
+@media (hover: hover) and (pointer: fine) {
+  body,
+  a,
+  button,
+  [role="button"],
+  input,
+  textarea,
+  select {
+    cursor: none !important;
+  }
 }
 
 body {

@@ -13,23 +13,26 @@ function CustomCursor() {
   const ringPos = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
-    if (isTouch) return;
+    // Only run on devices that support fine mouse pointers
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+
+    let isMoving = false;
 
     const onMouseMove = (e) => {
       mousePos.current = { x: e.clientX, y: e.clientY };
       if (!visible) setVisible(true);
+      if (!isMoving) {
+        isMoving = true;
+        requestRef.current = requestAnimationFrame(animate);
+      }
     };
 
     const animate = () => {
-      // Lerp for smooth trailing
-      // Inner dot: very fast (0.2)
-      dotPos.current.x += (mousePos.current.x - dotPos.current.x) * 0.2;
-      dotPos.current.y += (mousePos.current.y - dotPos.current.y) * 0.2;
+      dotPos.current.x += (mousePos.current.x - dotPos.current.x) * 0.25;
+      dotPos.current.y += (mousePos.current.y - dotPos.current.y) * 0.25;
 
-      // Outer ring: slower for fluid feel (0.1)
-      ringPos.current.x += (mousePos.current.x - ringPos.current.x) * 0.1;
-      ringPos.current.y += (mousePos.current.y - ringPos.current.y) * 0.1;
+      ringPos.current.x += (mousePos.current.x - ringPos.current.x) * 0.12;
+      ringPos.current.y += (mousePos.current.y - ringPos.current.y) * 0.12;
 
       if (dotRef.current) {
         dotRef.current.style.transform = `translate3d(${dotPos.current.x}px, ${dotPos.current.y}px, 0) translate(-50%, -50%)`;
@@ -41,34 +44,27 @@ function CustomCursor() {
       requestRef.current = requestAnimationFrame(animate);
     };
 
-    window.addEventListener("mousemove", onMouseMove);
-    window.addEventListener("mouseenter", () => setVisible(true));
-    window.addEventListener("mouseleave", () => setVisible(false));
-
-    requestRef.current = requestAnimationFrame(animate);
-
-    const handleHover = () => setHovered(true);
-    const handleUnhover = () => setHovered(false);
-
-    const attachListeners = () => {
-      const targets = document.querySelectorAll("a, button, [role='button'], .skill-tag, .project-item");
-      targets.forEach((el) => {
-        el.addEventListener("mouseenter", handleHover);
-        el.addEventListener("mouseleave", handleUnhover);
-      });
+    const onMouseOver = (e) => {
+      if (e.target && e.target.closest && e.target.closest("a, button, [role='button'], .skill-tag, .project-card-wrap, input, textarea")) {
+        setHovered(true);
+      } else {
+        setHovered(false);
+      }
     };
 
-    attachListeners();
-    const interval = setInterval(attachListeners, 2000);
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
+    document.addEventListener("mouseover", onMouseOver, { passive: true });
+    window.addEventListener("mouseleave", () => setVisible(false));
 
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("mouseenter", () => setVisible(true));
+      document.removeEventListener("mouseover", onMouseOver);
       window.removeEventListener("mouseleave", () => setVisible(false));
-      cancelAnimationFrame(requestRef.current);
-      clearInterval(interval);
+      if (requestRef.current) {
+        cancelAnimationFrame(requestRef.current);
+      }
     };
-  }, [visible]);
+  }, []);
 
   return (
     <div

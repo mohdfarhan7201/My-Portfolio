@@ -10,35 +10,36 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useEffect(() => {
-    // Initialize buttery smooth scrolling with Lenis immediately
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: "vertical",
-      gestureOrientation: "vertical",
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 1.5,
-    });
+    let lenis;
+    let updateTicker;
 
-    lenis.on("scroll", ScrollTrigger.update);
-
-    const updateTicker = (time) => {
-      lenis.raf(time * 1000);
-    };
-
-    gsap.ticker.add(updateTicker);
-    gsap.ticker.lagSmoothing(0);
-
-    // Refresh ScrollTrigger once DOM layout stabilizes
+    // Defer Lenis initialization so initial render and LCP finish instantly
     const timer = setTimeout(() => {
+      lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: "vertical",
+        gestureOrientation: "vertical",
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 1.2,
+      });
+
+      lenis.on("scroll", ScrollTrigger.update);
+
+      updateTicker = (time) => {
+        lenis.raf(time * 1000);
+      };
+
+      gsap.ticker.add(updateTicker);
+      gsap.ticker.lagSmoothing(0);
       ScrollTrigger.refresh();
-    }, 150);
+    }, 120);
 
     return () => {
       clearTimeout(timer);
-      gsap.ticker.remove(updateTicker);
-      lenis.destroy();
+      if (updateTicker) gsap.ticker.remove(updateTicker);
+      if (lenis) lenis.destroy();
     };
   }, []);
 
