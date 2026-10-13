@@ -62,6 +62,9 @@ function Contact() {
           <a
             href="mailto:mohd.farhan.7201@gmail.com"
             className="group relative px-6 py-3.5 sm:px-11 sm:py-4.5 overflow-hidden rounded-full border border-white/20 text-xs sm:text-sm font-bold uppercase tracking-[2.5px] sm:tracking-[3px] transition-all hover:border-white font-accent shadow-2xl text-center"
+            aria-label="Send an email to Mohd Farhan"
+            data-toolname="contactDeveloper"
+            data-tooldescription="Initiate an email consultation with Mohd Farhan"
           >
             <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
               Send an Email
@@ -71,6 +74,9 @@ function Contact() {
 
           <button
             onClick={handleCopyEmail}
+            aria-label="Copy Mohd Farhan's email address to clipboard"
+            data-toolname="copyEmailAddress"
+            data-tooldescription="Copy email address to clipboard"
             className="flex items-center justify-center gap-2 px-5 py-3.5 sm:px-7 sm:py-4.5 rounded-full border border-white/10 text-zinc-300 hover:text-white hover:border-white/25 text-xs sm:text-sm font-mono transition-all"
           >
             {copied ? (
