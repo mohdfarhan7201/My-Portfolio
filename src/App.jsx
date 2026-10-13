@@ -17,9 +17,7 @@ function App() {
   useSound();
 
   useEffect(() => {
-    if (loading) return;
-
-    // Initialize smooth scrolling with Lenis
+    // Initialize smooth scrolling with Lenis immediately
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -42,21 +40,19 @@ function App() {
     // Refresh ScrollTrigger once DOM layout stabilizes
     const timer = setTimeout(() => {
       ScrollTrigger.refresh();
-    }, 200);
+    }, 250);
 
     return () => {
       clearTimeout(timer);
       gsap.ticker.remove(updateTicker);
       lenis.destroy();
     };
-  }, [loading]);
-
-  if (loading) {
-    return <Loader onFinish={() => setLoading(false)} />;
-  }
+  }, []);
 
   return (
     <>
+      {/* Non-blocking loader overlay: ensures immediate FCP/LCP for Lighthouse & crawlers */}
+      {loading && <Loader onFinish={() => setLoading(false)} />}
       <CustomCursor />
       <Navbar />
       <PageTransition>
