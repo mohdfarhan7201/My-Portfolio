@@ -1,5 +1,5 @@
 # Robots.txt for Mohd Farhan Portfolio
-# Website: https://mohdfarhan.dev / https://mohdfarhan7201.github.io
+# Website: https://mohdfarhan-portfolio.vercel.app
 
 User-agent: *
 Allow: /
@@ -45,5 +45,4 @@ User-agent: Amazonbot
 Allow: /
 
 # Sitemap Location
-Sitemap: https://mohdfarhan.dev/sitemap.xml
-Sitemap: https://mohdfarhan7201.github.io/sitemap.xml
+Sitemap: https://mohdfarhan-portfolio.vercel.app/sitemap.xml
