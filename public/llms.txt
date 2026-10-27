@@ -1,24 +1,61 @@
-# Mohd Farhan - Portfolio & Developer Summary
-> Web Developer & SEO Executive based in Gorakhpur, Uttar Pradesh, India.
+# Mohd Farhan - Full Stack Next.js & React Developer, Technical SEO Specialist
+> Portfolio & Professional Profile: https://mohdfarhan-portfolio.vercel.app
+> Location: Gorakhpur, Uttar Pradesh, India (Serving Gorakhpur, Lucknow, Delhi NCR, Pan-India & Remote Worldwide)
 
-## Professional Summary
-Mohd Farhan is a professional Web Developer and SEO Executive skilled in modern reactive web development, frontend architectures, animation systems, and search engine optimization. He builds fast, responsive, and search-ranking digital platforms.
+## Summary & Core Identity
+Mohd Farhan is a professional Full Stack Web Developer and Technical SEO Specialist. He bridges the gap between high-performance reactive frontend architectures (Next.js, React.js, GSAP, Tailwind CSS) and search-engine-dominant Technical SEO (Core Web Vitals, Google Search Console indexing, Structured JSON-LD Data, Schema.org).
 
-## Core Technical Skills
-- Frontend: HTML5, CSS3, JavaScript (ES6+), React.js, Next.js, TypeScript, Tailwind CSS, GSAP Motion, Framer Motion, Bootstrap.
-- Backend & DevOps: Next.js API/Server Actions, MongoDB, Git, GitHub, Vercel, VS Code, REST API Integration.
-- Search Engine Optimization (SEO): Technical SEO, On-Page SEO, Off-Page SEO, Local SEO, Keyword Research, Metadata Optimization, XML Sitemaps, Robots.txt, Canonical Tags, Core Web Vitals (LCP, INP, CLS), Google Search Console, Google Analytics 4 (GA4).
+## Core Capabilities & Services
 
-## Work Experience
+### 1. Next.js & React Web Application Development
+- Next.js Developer: App Router, React Server Components (RSC), Server Actions.
+- Server-Side Rendering (SSR) & Static Site Generation (SSG).
+- Next.js SEO Friendly Websites & High-Performance Business Websites.
+- Next.js Landing Page Development & Custom Web Applications.
+- Next.js Performance Optimization: Dynamic imports, bundle splitting, Image optimization.
+- Hire Next.js Developer & React.js Developer for freelance or full-time remote contracts.
+
+### 2. Full Stack & MERN Stack Development
+- Full Stack Web Developer: Node.js, Express.js, MongoDB Developer.
+- RESTful API Development, API Integration, and Webhook systems.
+- Dynamic Admin Dashboard Development and Content Management Systems.
+- Responsive Website Developer & Custom Website Development for Startups and Small Businesses.
+
+### 3. Technical SEO, Auditing & Search Engine Optimization
+- Technical SEO, On-Page SEO, Off-Page SEO, and Local SEO.
+- SEO Specialist & SEO Executive with hands-on audit workflows.
+- Core Web Vitals Optimization: LCP (Largest Contentful Paint), INP (Interaction to Next Paint), CLS (Cumulative Layout Shift).
+- Google Search Console (GSC) Setup, Crawling & Website Indexing fixes.
+- Keyword Research, Semantic HTML5 Heading Architecture, XML Sitemaps, Robots.txt, and Canonicalization.
+
+### 4. Interactive Frontend & Animation Engineering
+- GSAP Animation Developer (ScrollTrigger, Timeline, Parallax micro-interactions).
+- Framer Motion Developer (Fluid layout transitions, modals, interactive UI components).
+- Tailwind CSS Developer (Modern responsive layouts, mobile-first design, dark mode).
+- Modern Website Development & Interactive Web Applications.
+
+### 5. Local SEO & Regional Coverage
+- Web Developer in Gorakhpur, Uttar Pradesh
+- Web Developer in Lucknow, Uttar Pradesh
+- Web Developer in Delhi NCR
+- SEO Services in Gorakhpur, Lucknow & Delhi NCR
+- Freelance Web Developer India & International Remote Freelancer
+
+## Work History & Education
 - Web Development Intern at Shine Infosolutions (15 July 2026 – Present, Gorakhpur, UP). Builds responsive UI components, implements GSAP/Framer animations, and drives website optimization and SEO.
+- Bachelor of Computer Applications (BCA) from Deen Dayal Upadhyaya Gorakhpur University (DDU), 2026 (Aggregate: 73.3%).
+- Certified in Responsive Web Design (January 2025).
 
 ## Key Projects
 1. Healthcare Application (React.js, Tailwind CSS, Framer Motion): Modern medical and healthcare interface with interactive appointment workflows and responsive layouts.
 2. Chocolate E-Commerce Platform (JavaScript, GSAP, HTML5, CSS3): Interactive luxury product showcase with fluid GSAP animations, deployed on Vercel.
+3. AI Neural Network Hub (Next.js, TypeScript, Tailwind CSS): High-performance modular platform concept.
+4. Bento Social Grid (React.js, Tailwind CSS, Framer Motion): Interactive dashboard layout.
 
-## Contact & Links
+## Contact & Hiring Information
 - Email: mohd.farhan.7201@gmail.com
-- Phone: +91 83038 77102
+- Telephone: +91 83038 77102
+- Portfolio: https://mohdfarhan-portfolio.vercel.app/
 - GitHub: https://github.com/mohdfarhan7201
 - LinkedIn: https://www.linkedin.com/in/mohd-farhan-4721a4295/
-- Location: Gorakhpur, Uttar Pradesh, India
+- Availability: Freelance Projects, Remote Contracts, Full-Stack Consulting.

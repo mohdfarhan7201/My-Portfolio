@@ -81,9 +81,9 @@ function Hero() {
         className="relative z-20 max-w-5xl flex flex-col items-start w-full"
       >
         <div className="inline-flex items-center gap-2.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-4 sm:mb-6">
-          <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-          <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[2px] sm:tracking-[3px] text-zinc-300 font-accent">
-            Web Developer & SEO Executive
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[2px] sm:tracking-[2.5px] text-zinc-300 font-accent">
+            Full Stack Next.js Developer & SEO Specialist
           </span>
         </div>
 
@@ -93,7 +93,7 @@ function Hero() {
 
         <div className="mt-4 sm:mt-7 max-w-2xl">
           <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-zinc-400 font-normal leading-relaxed">
-            Building <span className="text-white font-semibold">interactive modern web apps</span> and <span className="text-white font-semibold">search-dominant digital experiences</span> where fluid GSAP animations meet high-performance SEO.
+            Building <span className="text-white font-semibold">high-performance Next.js & React web applications</span>, custom business websites, and <span className="text-white font-semibold">search-dominant digital experiences</span> where fluid GSAP animations meet Technical SEO & Core Web Vitals.
           </p>
         </div>
 
@@ -110,15 +110,15 @@ function Hero() {
           </a>
 
           <a
-            href="#contact"
+            href="#services"
             className="px-6 py-3.5 sm:px-8 sm:py-4 rounded-full border border-white/10 text-zinc-400 hover:text-white hover:border-white/30 text-[11px] sm:text-xs font-bold uppercase tracking-[2.5px] sm:tracking-[3px] transition-all text-center"
           >
-            Get In Touch
+            Services & Solutions
           </a>
 
           <div className="hidden sm:flex gap-3 items-center opacity-40 ml-2">
             <div className="w-8 h-[1px] bg-white" />
-            <span className="text-[10px] uppercase tracking-[3px] font-accent">Gorakhpur, UP</span>
+            <span className="text-[10px] uppercase tracking-[3px] font-accent">Gorakhpur • Lucknow • Delhi NCR</span>
           </div>
         </div>
       </div>
