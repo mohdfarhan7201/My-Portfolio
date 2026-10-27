@@ -1,5 +1,5 @@
 # Mohd Farhan - Full Stack Next.js & React Developer, Technical SEO Specialist
-> Portfolio & Professional Profile: https://mohdfarhan-portfolio.vercel.app
+> Portfolio & Professional Profile: https://mohdfarhan-nu.vercel.app
 > Location: Gorakhpur, Uttar Pradesh, India (Serving Gorakhpur, Lucknow, Delhi NCR, Pan-India & Remote Worldwide)
 
 ## Summary & Core Identity
@@ -55,7 +55,7 @@ Mohd Farhan is a professional Full Stack Web Developer and Technical SEO Special
 ## Contact & Hiring Information
 - Email: mohd.farhan.7201@gmail.com
 - Telephone: +91 83038 77102
-- Portfolio: https://mohdfarhan-portfolio.vercel.app/
+- Portfolio: https://mohdfarhan-nu.vercel.app/
 - GitHub: https://github.com/mohdfarhan7201
 - LinkedIn: https://www.linkedin.com/in/mohd-farhan-4721a4295/
 - Availability: Freelance Projects, Remote Contracts, Full-Stack Consulting.

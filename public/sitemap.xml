@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://mohdfarhan-portfolio.vercel.app/</loc>
+    <loc>https://mohdfarhan-nu.vercel.app/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://mohdfarhan-portfolio.vercel.app/images/toji.webp</image:loc>
+      <image:loc>https://mohdfarhan-nu.vercel.app/images/toji.webp</image:loc>
       <image:title>Mohd Farhan - Full Stack Next.js Developer &amp; Technical SEO Specialist</image:title>
       <image:caption>Portfolio of Mohd Farhan - Web Developer and SEO Specialist in Gorakhpur, Lucknow, and Delhi NCR</image:caption>
     </image:image>
