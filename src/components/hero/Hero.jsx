@@ -41,7 +41,7 @@ function Hero() {
     <section
       ref={heroRef}
       id="home"
-      className="relative min-h-[90vh] sm:min-h-[92vh] w-full max-w-full overflow-hidden bg-black flex items-center px-4 sm:px-10 md:px-20 lg:px-28 pt-24 sm:pt-28 pb-12 sm:pb-16"
+      className="relative min-h-[85vh] sm:min-h-[92vh] w-full max-w-full overflow-hidden bg-black flex items-center px-4 sm:px-10 md:px-20 lg:px-28 pt-20 sm:pt-28 pb-12 sm:pb-16"
     >
       {/* Background Image with Parallax Mask */}
       <div
@@ -80,19 +80,19 @@ function Hero() {
         ref={textRef}
         className="relative z-20 max-w-5xl flex flex-col items-start w-full"
       >
-        <div className="inline-flex items-center gap-2.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-4 sm:mb-6">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[2px] sm:tracking-[2.5px] text-zinc-300 font-accent">
+        <div className="inline-flex items-center gap-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-3 sm:mb-6 max-w-full">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+          <span className="text-[9.5px] xs:text-[11px] sm:text-xs font-mono uppercase tracking-[1.5px] sm:tracking-[2.5px] text-zinc-300 font-accent truncate">
             Full Stack Next.js Developer & SEO Specialist
           </span>
         </div>
 
-        <h1 className="text-gradient text-[40px] xs:text-[48px] sm:text-[72px] md:text-[86px] lg:text-[96px] font-extrabold tracking-tight leading-[0.95] sm:leading-[0.92] font-heading select-none break-words w-full">
+        <h1 className="text-gradient text-[34px] xs:text-[44px] sm:text-[68px] md:text-[84px] lg:text-[96px] font-extrabold tracking-tight leading-[1] sm:leading-[0.92] font-heading select-none break-words w-full">
           MOHD FARHAN
         </h1>
 
-        <div className="mt-4 sm:mt-7 max-w-2xl">
-          <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-zinc-400 font-normal leading-relaxed">
+        <div className="mt-3.5 sm:mt-7 max-w-2xl">
+          <p className="text-xs xs:text-sm sm:text-lg md:text-xl lg:text-2xl text-zinc-400 font-normal leading-relaxed">
             Building <span className="text-white font-semibold">high-performance Next.js & React web applications</span>, custom business websites, and <span className="text-white font-semibold">search-dominant digital experiences</span> where fluid GSAP animations meet Technical SEO & Core Web Vitals.
           </p>
         </div>
@@ -101,7 +101,7 @@ function Hero() {
         <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-5 w-full sm:w-auto">
           <a
             href="#projects"
-            className="group relative px-6 py-3.5 sm:px-9 sm:py-4 overflow-hidden rounded-full border border-white/25 text-[11px] sm:text-xs font-bold uppercase tracking-[2.5px] sm:tracking-[3px] transition-all hover:border-white shadow-xl text-center"
+            className="group relative px-6 py-3.5 sm:px-9 sm:py-4 overflow-hidden rounded-full border border-white/25 text-[11px] sm:text-xs font-bold uppercase tracking-[2.5px] sm:tracking-[3px] transition-all hover:border-white shadow-xl text-center active:scale-95"
           >
             <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
               Explore Featured Work
@@ -111,7 +111,7 @@ function Hero() {
 
           <a
             href="#services"
-            className="px-6 py-3.5 sm:px-8 sm:py-4 rounded-full border border-white/10 text-zinc-400 hover:text-white hover:border-white/30 text-[11px] sm:text-xs font-bold uppercase tracking-[2.5px] sm:tracking-[3px] transition-all text-center"
+            className="px-6 py-3.5 sm:px-8 sm:py-4 rounded-full border border-white/10 text-zinc-400 hover:text-white hover:border-white/30 text-[11px] sm:text-xs font-bold uppercase tracking-[2.5px] sm:tracking-[3px] transition-all text-center active:scale-95"
           >
             Services & Solutions
           </a>
@@ -119,6 +119,11 @@ function Hero() {
           <div className="hidden sm:flex gap-3 items-center opacity-40 ml-2">
             <div className="w-8 h-[1px] bg-white" />
             <span className="text-[10px] uppercase tracking-[3px] font-accent">Gorakhpur • Lucknow • Delhi NCR</span>
+          </div>
+
+          <div className="flex sm:hidden items-center justify-center gap-2 pt-2 opacity-60">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+            <span className="text-[9.5px] uppercase tracking-[2px] font-accent text-zinc-400">Gorakhpur • Lucknow • Delhi NCR</span>
           </div>
         </div>
       </div>

@@ -130,7 +130,7 @@ function About() {
             </div>
 
             {/* Code */}
-            <pre className="text-[11px] sm:text-xs md:text-sm text-zinc-400 font-mono leading-relaxed mt-3.5 sm:mt-4 overflow-x-auto">
+            <pre className="text-[10px] xs:text-[11px] sm:text-xs md:text-sm text-zinc-400 font-mono leading-relaxed mt-3.5 sm:mt-4 overflow-x-auto no-scrollbar max-w-full">
               <code>{`const developer = {
   name: "Mohd Farhan",
   focus: ["Web Dev", "Technical SEO"],
