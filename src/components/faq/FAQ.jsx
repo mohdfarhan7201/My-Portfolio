@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const faqItems = [
   {
-    q: "Why hire Mohd Farhan as your Next.js & React Developer?",
+    q: "What makes Mohd Farhan stand out as a Next.js & React Developer?",
     a: "Mohd Farhan specializes in modern Next.js (App Router, Server Components, SSR/SSG) and React.js development with a rare double-advantage: deep frontend engineering coupled with technical SEO expertise. Every website is built for lightning-fast Core Web Vitals, maximum search visibility, and seamless interactive user experience.",
   },
   {
@@ -27,8 +27,8 @@ const faqItems = [
     a: "Absolutely. I design and engineer custom business websites, startup landing pages, and web applications engineered to convert visitors into clients. All sites include conversion tracking, clean typography, fast load times, and responsive layouts across all mobile, tablet, and desktop screens.",
   },
   {
-    q: "How can I hire you for freelance web development or full-time roles?",
-    a: "You can reach out directly via email at mohd.farhan.7201@gmail.com, call +91 83038 77102, or connect via LinkedIn and GitHub. I am open to freelance projects, startup consulting, contract roles, and full-time remote or hybrid positions.",
+    q: "How can teams or clients connect with you for engineering projects or roles?",
+    a: "You can reach out directly via email at mohd.farhan.7201@gmail.com, call +91 83038 77102, or connect via LinkedIn and GitHub. I am open to discussing modern web engineering, technical collaborations, and full-time remote or hybrid opportunities.",
   },
 ];
 

@@ -85,19 +85,19 @@ const services = [
     tags: ["Tailwind CSS", "GSAP Motion", "Framer Motion", "Interactive UI"],
   },
   {
-    badge: "Local & Global Reach",
-    title: "Local SEO & Freelance Web Development",
+    badge: "Regional Reach",
+    title: "Regional & Technical Web Solutions",
     subtitle: "Gorakhpur • Lucknow • Delhi NCR • Global",
-    desc: "Providing bespoke website development and local SEO services for businesses, startups, and international clients. Targeted local search optimization to dominate Google searches in regional markets.",
+    desc: "Providing bespoke web architecture and technical SEO services for organizations, modern businesses, and digital platforms. Implementing localized optimization to excel in regional and national searches.",
     icon: <FaLocationDot className="text-[#EF4444] text-2xl" />,
     features: [
-      "Web Developer & Local SEO Services in Gorakhpur",
-      "Website Development & SEO in Lucknow & Delhi NCR",
-      "Freelance Web Developer for Startups & Small Businesses",
-      "Hire Next.js & React Developer for Contract / Remote Roles",
-      "International Freelance Web Development & Support",
+      "Web Development & Technical SEO in Gorakhpur",
+      "Web Architecture & Search Performance in Lucknow & Delhi NCR",
+      "Custom Solutions for Startups & Small Businesses",
+      "Full-Stack Next.js & React Component Engineering",
+      "Modern Web Applications & Global Responsive Standards",
     ],
-    tags: ["Gorakhpur", "Lucknow", "Delhi NCR", "Freelance India", "Hire Developer"],
+    tags: ["Gorakhpur", "Lucknow", "Delhi NCR", "Web Architecture", "Next.js"],
   },
   {
     badge: "Conversion-Focused",
@@ -248,7 +248,7 @@ function Services() {
               Serving Businesses in Gorakhpur, Lucknow, Delhi NCR & Globally
             </h4>
             <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed mt-2">
-              Looking to hire a <strong className="text-zinc-200">Next.js developer</strong>, build a high-performance <strong className="text-zinc-200">custom business website</strong>, or rank your brand with <strong className="text-zinc-200">Local SEO</strong> in Uttar Pradesh or Delhi NCR? Let’s collaborate on your next growth milestone.
+              Building high-performance <strong className="text-zinc-200">Next.js web applications</strong>, responsive <strong className="text-zinc-200">custom web platforms</strong>, and ranking websites with <strong className="text-zinc-200">Technical & Local SEO</strong> across Uttar Pradesh, Delhi NCR, and beyond. Let’s collaborate on your next growth milestone.
             </p>
           </div>
 
@@ -256,7 +256,7 @@ function Services() {
             href="#contact"
             className="inline-flex items-center gap-3 px-6 py-3.5 sm:px-8 sm:py-4 rounded-full border border-white/20 bg-white text-black hover:bg-zinc-200 text-xs sm:text-sm font-bold uppercase tracking-wider font-accent transition-all duration-300 shadow-xl whitespace-nowrap"
           >
-            <span>Hire Web Developer</span>
+            <span>Let’s Connect</span>
             <FaArrowRight className="text-xs" />
           </a>
         </div>
