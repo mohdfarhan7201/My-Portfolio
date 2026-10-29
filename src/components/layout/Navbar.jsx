@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaBars, FaXmark, FaGithub, FaLinkedinIn, FaEnvelope } from "react-icons/fa6";
+import { FaBars, FaXmark, FaGithub, FaLinkedinIn, FaEnvelope, FaArrowRight } from "react-icons/fa6";
 import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
@@ -50,7 +50,7 @@ function Navbar() {
           {/* Logo Badge */}
           <a
             href="#home"
-            className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-xl border border-white/10 text-white font-heading font-bold text-xs tracking-wider shadow-lg"
+            className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-xl border border-white/10 text-white font-heading font-bold text-xs tracking-wider shadow-lg active:scale-95 transition-transform"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span>MOHD FARHAN</span>
@@ -61,7 +61,7 @@ function Navbar() {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={menuOpen}
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-black/85 backdrop-blur-xl border border-white/15 text-white shadow-xl hover:border-white/30 active:scale-95 transition-all"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-black/85 backdrop-blur-xl border border-white/15 text-white shadow-xl hover:border-white/30 active:scale-90 transition-all"
           >
             {menuOpen ? <FaXmark className="text-base" /> : <FaBars className="text-base" />}
           </button>
@@ -91,58 +91,68 @@ function Navbar() {
         </nav>
       </div>
 
-      {/* Mobile Drawer / Overlay Menu */}
+      {/* Zero-Scroll Compact Mobile Drawer Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed inset-0 top-[60px] z-[999] pointer-events-auto md:hidden bg-black/95 backdrop-blur-2xl border-t border-white/10 flex flex-col justify-between px-6 py-6 overflow-y-auto"
+            initial={{ opacity: 0, scale: 0.96, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.96, y: -10 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="fixed inset-0 top-[56px] z-[999] pointer-events-auto md:hidden bg-black/95 backdrop-blur-2xl border-t border-white/10 flex flex-col justify-between p-4 xs:p-5 overflow-hidden h-[calc(100dvh-56px)] max-h-[calc(100dvh-56px)] select-none"
           >
-            {/* Links List */}
-            <div className="flex flex-col gap-1 w-full">
-              <span className="text-[10px] font-mono uppercase tracking-[3px] text-zinc-400 font-accent mb-3">
-                Navigation
+            {/* Header tag */}
+            <div className="flex items-center justify-between pb-2 border-b border-white/5 shrink-0">
+              <span className="text-[10px] font-mono uppercase tracking-[2.5px] text-zinc-400 font-accent">
+                Quick Menu
               </span>
+              <span className="text-[10px] font-mono text-emerald-400 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Tap to navigate
+              </span>
+            </div>
 
+            {/* 2-Column Responsive Navigation Grid (Fits screen without scrolling) */}
+            <div className="grid grid-cols-2 gap-2 xs:gap-2.5 w-full my-auto py-2">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={handleLinkClick}
-                  className="group flex items-center justify-between py-3 border-b border-white/5 text-zinc-300 hover:text-white hover:border-white/20 transition-all"
+                  className="group flex items-center justify-between px-3 py-2.5 xs:py-3 rounded-xl border border-white/5 bg-zinc-900/40 hover:border-white/25 hover:bg-zinc-900/70 active:scale-95 transition-all text-left shadow-md"
                 >
-                  <span className="text-lg font-bold font-heading tracking-wide group-hover:translate-x-1.5 transition-transform duration-200">
-                    {link.name}
-                  </span>
-                  <span className="text-xs font-mono text-zinc-400 group-hover:text-emerald-400 transition-colors">
-                    {link.num}
-                  </span>
+                  <div className="flex items-center gap-2 min-w-0">
+                    <span className="text-[10px] font-mono text-zinc-400 group-hover:text-emerald-400 transition-colors shrink-0">
+                      {link.num}
+                    </span>
+                    <span className="text-xs xs:text-sm font-bold font-heading text-zinc-200 group-hover:text-white transition-colors truncate">
+                      {link.name}
+                    </span>
+                  </div>
+                  <FaArrowRight className="text-[10px] text-zinc-400 group-hover:text-white group-hover:translate-x-0.5 transition-all shrink-0 ml-1 opacity-0 group-hover:opacity-100" />
                 </a>
               ))}
             </div>
 
-            {/* Bottom Actions & Socials */}
-            <div className="pt-6 mt-4 border-t border-white/10 flex flex-col gap-4">
+            {/* Compact Bottom Section: CTA & Socials (Never overflows) */}
+            <div className="pt-3 border-t border-white/10 flex flex-col gap-2.5 shrink-0">
               <a
                 href="#contact"
                 onClick={handleLinkClick}
-                className="w-full py-3.5 rounded-full bg-white text-black font-heading font-bold text-xs uppercase tracking-wider text-center shadow-xl active:scale-[0.98] transition-transform"
+                className="w-full py-2.5 xs:py-3 rounded-xl bg-white text-black font-heading font-bold text-xs uppercase tracking-wider text-center shadow-xl active:scale-[0.98] transition-transform"
               >
-                Get In Touch
+                Let’s Connect
               </a>
 
-              <div className="flex items-center justify-between text-zinc-400 pt-2 text-xs font-mono">
-                <span>Gorakhpur, UP, India</span>
-                <div className="flex items-center gap-4 text-base">
+              <div className="flex items-center justify-between text-zinc-400 text-[11px] font-mono pt-1">
+                <span>Gorakhpur, UP</span>
+                <div className="flex items-center gap-3.5 text-sm">
                   <a
                     href="https://github.com/mohdfarhan7201"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub Profile"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-white p-1 transition-colors"
                   >
                     <FaGithub />
                   </a>
@@ -151,14 +161,14 @@ function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn Profile"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-white p-1 transition-colors"
                   >
                     <FaLinkedinIn />
                   </a>
                   <a
                     href="mailto:mohd.farhan.7201@gmail.com"
                     aria-label="Send Email"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-white p-1 transition-colors"
                   >
                     <FaEnvelope />
                   </a>
