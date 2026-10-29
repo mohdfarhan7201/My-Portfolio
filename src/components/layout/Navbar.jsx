@@ -50,7 +50,7 @@ function Navbar() {
           {/* Logo Badge */}
           <a
             href="#home"
-            className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-xl border border-white/10 text-white font-heading font-bold text-xs tracking-wider shadow-lg active:scale-95 transition-transform"
+            className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/85 backdrop-blur-xl border border-white/10 text-white font-heading font-bold text-xs tracking-wider shadow-lg active:scale-95 transition-transform"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span>MOHD FARHAN</span>
@@ -99,10 +99,10 @@ function Navbar() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.97, y: -10 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="fixed inset-0 top-[56px] z-[999] pointer-events-auto md:hidden bg-black/95 backdrop-blur-2xl border-t border-white/10 flex flex-col justify-between p-3.5 xs:p-4 overflow-hidden h-[calc(100dvh-56px)] max-h-[calc(100dvh-56px)] select-none"
+            className="fixed inset-0 top-[56px] z-[999] pointer-events-auto md:hidden bg-black/95 backdrop-blur-2xl border-t border-white/10 flex flex-col justify-between px-4 py-4 overflow-hidden h-[calc(100dvh-56px)] max-h-[calc(100dvh-56px)] select-none"
           >
             {/* Header tag */}
-            <div className="flex items-center justify-between pb-1.5 border-b border-white/5 shrink-0">
+            <div className="flex items-center justify-between pb-2 border-b border-white/5 shrink-0">
               <span className="text-[10px] font-mono uppercase tracking-[2.5px] text-zinc-400 font-accent">
                 Navigation
               </span>
@@ -112,8 +112,8 @@ function Navbar() {
               </span>
             </div>
 
-            {/* Alternating Zig-Zag List: Home Left -> About Right -> Services Left -> Skills Right */}
-            <div className="flex flex-col justify-center gap-1.5 xs:gap-2 w-full my-auto py-1">
+            {/* Alternating Zig-Zag List: Larger Cards, Wide Left-Right Shift */}
+            <div className="flex flex-col justify-center gap-2 xs:gap-2.5 w-full my-auto py-1">
               {navLinks.map((link, idx) => {
                 const isLeft = idx % 2 === 0;
                 return (
@@ -124,40 +124,40 @@ function Navbar() {
                     <a
                       href={link.href}
                       onClick={handleLinkClick}
-                      className={`group w-[86%] xs:w-[82%] flex items-center justify-between px-3.5 py-1.5 xs:py-2 rounded-2xl ${
+                      className={`group w-[74%] xs:w-[70%] flex items-center justify-between px-4 py-2.5 xs:py-3 rounded-2xl ${
                         isLeft
-                          ? "rounded-tl-md border-l-2 border-l-emerald-400/80 border-y border-r border-white/10"
-                          : "rounded-tr-md border-r-2 border-r-emerald-400/80 border-y border-l border-white/10"
-                      } bg-zinc-900/50 hover:bg-zinc-800/80 hover:border-white/30 active:scale-[0.98] transition-all shadow-md`}
+                          ? "rounded-tl-md border-l-[3px] border-l-emerald-400 border-y border-r border-white/10"
+                          : "rounded-tr-md border-r-[3px] border-r-emerald-400 border-y border-l border-white/10"
+                      } bg-zinc-900/70 hover:bg-zinc-800/90 hover:border-white/30 active:scale-[0.97] transition-all shadow-xl`}
                     >
                       <div className="flex items-center gap-2.5 min-w-0">
-                        <span className="text-[10px] font-mono text-emerald-400 shrink-0 font-semibold">
+                        <span className="text-[11px] font-mono text-emerald-400 shrink-0 font-bold px-1.5 py-0.5 rounded bg-emerald-400/10">
                           {link.num}
                         </span>
-                        <span className="text-xs xs:text-sm font-bold font-heading text-zinc-200 group-hover:text-white transition-colors truncate">
+                        <span className="text-sm xs:text-[15px] font-bold font-heading text-white tracking-wide truncate">
                           {link.name}
                         </span>
                       </div>
-                      <FaArrowRight className="text-[10px] text-zinc-500 group-hover:text-white group-hover:translate-x-0.5 transition-all shrink-0 opacity-40 group-hover:opacity-100" />
+                      <FaArrowRight className="text-xs text-zinc-400 group-hover:text-white group-hover:translate-x-1 transition-all shrink-0 ml-1.5 opacity-60 group-hover:opacity-100" />
                     </a>
                   </div>
                 );
               })}
             </div>
 
-            {/* Compact Bottom Section: CTA & Socials */}
-            <div className="pt-2.5 border-t border-white/10 flex flex-col gap-2 shrink-0">
+            {/* Bottom Section: CTA & Socials */}
+            <div className="pt-3 border-t border-white/10 flex flex-col gap-2.5 shrink-0">
               <a
                 href="#contact"
                 onClick={handleLinkClick}
-                className="w-full py-2 xs:py-2.5 rounded-xl bg-white text-black font-heading font-bold text-xs uppercase tracking-wider text-center shadow-xl active:scale-[0.98] transition-transform"
+                className="w-full py-3 rounded-xl bg-white text-black font-heading font-bold text-xs uppercase tracking-wider text-center shadow-xl active:scale-[0.98] transition-transform"
               >
                 Let’s Connect
               </a>
 
-              <div className="flex items-center justify-between text-zinc-400 text-[10px] xs:text-[11px] font-mono pt-0.5">
+              <div className="flex items-center justify-between text-zinc-400 text-xs font-mono pt-1">
                 <span>Gorakhpur, UP</span>
-                <div className="flex items-center gap-3 text-sm">
+                <div className="flex items-center gap-3.5 text-base">
                   <a
                     href="https://github.com/mohdfarhan7201"
                     target="_blank"
