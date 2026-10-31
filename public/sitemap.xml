@@ -3,13 +3,57 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://mohdfarhan-nu.vercel.app/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    
+    <!-- Hero LCP Image -->
     <image:image>
       <image:loc>https://mohdfarhan-nu.vercel.app/images/toji.webp</image:loc>
       <image:title>Mohd Farhan - Full Stack Next.js Developer &amp; Technical SEO Specialist</image:title>
-      <image:caption>Portfolio of Mohd Farhan - Web Developer and SEO Specialist in Gorakhpur, Lucknow, and Delhi NCR</image:caption>
+      <image:caption>Official Portfolio of Mohd Farhan - Full Stack Developer and Technical SEO Specialist</image:caption>
+    </image:image>
+
+    <!-- Project 1: Healthcare Application -->
+    <image:image>
+      <image:loc>https://mohdfarhan-nu.vercel.app/images/projects/healthcare.webp</image:loc>
+      <image:title>Healthcare Application - React &amp; Tailwind Web App</image:title>
+      <image:caption>Interactive healthcare and clinic appointment management interface developed by Mohd Farhan</image:caption>
+    </image:image>
+
+    <!-- Project 2: Chocolate E-Commerce Platform -->
+    <image:image>
+      <image:loc>https://mohdfarhan-nu.vercel.app/images/projects/chocolate.webp</image:loc>
+      <image:title>Chocolate E-Commerce Platform - GSAP Animated Web App</image:title>
+      <image:caption>Interactive luxury chocolate product showcase with fluid GSAP micro-animations developed by Mohd Farhan</image:caption>
+    </image:image>
+
+    <!-- Project 3: AI Neural Network Hub -->
+    <image:image>
+      <image:loc>https://mohdfarhan-nu.vercel.app/images/projects/ai-hub.webp</image:loc>
+      <image:title>AI Neural Network Hub - Next.js &amp; TypeScript Platform</image:title>
+      <image:caption>High-performance AI modular neural network dashboard engineered by Mohd Farhan</image:caption>
+    </image:image>
+
+    <!-- Project 4: Bento Social Grid -->
+    <image:image>
+      <image:loc>https://mohdfarhan-nu.vercel.app/images/projects/bento.webp</image:loc>
+      <image:title>Bento Social Grid - Modern React Dashboard</image:title>
+      <image:caption>Interactive bento grid dashboard interface with Framer Motion animations developed by Mohd Farhan</image:caption>
+    </image:image>
+
+    <!-- Project 5: Weather &amp; Analytics Dashboard -->
+    <image:image>
+      <image:loc>https://mohdfarhan-nu.vercel.app/images/projects/weather.webp</image:loc>
+      <image:title>Weather &amp; Analytics Dashboard - REST API Web App</image:title>
+      <image:caption>Real-time weather forecasting and analytics web application developed by Mohd Farhan</image:caption>
+    </image:image>
+
+    <!-- Project 6: Eco-Track Web App -->
+    <image:image>
+      <image:loc>https://mohdfarhan-nu.vercel.app/images/projects/eco-track.webp</image:loc>
+      <image:title>Eco-Track Web App - Sustainability Tracking Utility</image:title>
+      <image:caption>Responsive sustainability tracker and carbon footprint utility built by Mohd Farhan</image:caption>
     </image:image>
   </url>
 </urlset>

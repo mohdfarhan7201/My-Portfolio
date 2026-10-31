@@ -53,7 +53,7 @@ function Loader({ onFinish }) {
   return (
     <div className="loader fixed inset-0 z-[99999] flex items-center justify-center bg-black pointer-events-none select-none">
       <div className="text-center">
-        <h1 className="text-5xl sm:text-6xl font-black text-white">{progress}%</h1>
+        <div role="status" aria-live="polite" className="text-5xl sm:text-6xl font-black text-white">{progress}%</div>
         <p className="text-zinc-500 mt-3 sm:mt-4 tracking-[6px] sm:tracking-[10px] text-xs uppercase font-accent">
           INITIALIZING
         </p>

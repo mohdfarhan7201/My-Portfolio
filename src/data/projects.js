@@ -4,8 +4,14 @@ const projects = [
     title: "Healthcare Application",
     description:
       "A responsive healthcare interface built with reusable React components, fluid transitions, interactive appointment & clinic UI elements, and optimized assets.",
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop&fm=webp",
+    role: "Frontend Web Developer",
+    functionality: [
+      "Interactive doctor and clinic appointment scheduling workflow",
+      "Dynamic medical department filter and search interface",
+      "Accessible patient intake forms with instant validation",
+      "Mobile-responsive clinic directory and practitioner cards",
+    ],
+    image: "/images/projects/healthcare.webp",
     tech: ["React.js", "Tailwind CSS", "Framer Motion"],
     category: "Featured",
     categories: ["Featured", "Advance"],
@@ -17,8 +23,14 @@ const projects = [
     title: "Chocolate E-Commerce Platform",
     description:
       "An interactive product showcase featuring fluid GSAP animations, responsive layouts, cross-browser compatibility, and Git/GitHub version control; deployed on Vercel.",
-    image:
-      "https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=1000&auto=format&fit=crop&fm=webp",
+    role: "Frontend & Animation Developer",
+    functionality: [
+      "Smooth GSAP timeline and scroll-triggered parallax effects",
+      "Interactive luxury chocolate product showcase and flavor selector",
+      "Fluid responsive layout tested across desktop, tablet, and mobile",
+      "Optimized asset delivery and clean component hierarchy",
+    ],
+    image: "/images/projects/chocolate.webp",
     tech: ["JavaScript", "GSAP", "HTML5", "CSS3"],
     category: "Featured",
     categories: ["Featured", "Standard"],
@@ -30,8 +42,14 @@ const projects = [
     title: "AI Neural Network Hub",
     description:
       "Modern AI platform concept featuring real-time data visualization, modular frontend architecture, and responsive dark aesthetics.",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop&fm=webp",
+    role: "Full Stack Developer",
+    functionality: [
+      "Real-time interactive neural node and model parameter visualization",
+      "Prompt experimentation workbench with instant metric feedback",
+      "Type-safe modular architecture with Next.js and TypeScript",
+      "High-contrast dark mode design system built for technical users",
+    ],
+    image: "/images/projects/ai-hub.webp",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     category: "Advance",
     categories: ["Advance"],
@@ -43,8 +61,14 @@ const projects = [
     title: "Bento Social Grid",
     description:
       "Interactive social media dashboard layout crafted with dynamic bento grid cards and fluid micro-interactions.",
-    image:
-      "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop&fm=webp",
+    role: "Frontend UI Developer",
+    functionality: [
+      "Modular bento-grid layout with responsive breakpoint adaptation",
+      "Micro-interactions powered by Framer Motion layout animations",
+      "Aggregated social engagement cards with live data preview cards",
+      "Sleek frosted glassmorphism styling with dark theme consistency",
+    ],
+    image: "/images/projects/bento.webp",
     tech: ["React.js", "Tailwind CSS", "Framer Motion"],
     category: "Standard",
     categories: ["Standard"],
@@ -56,8 +80,14 @@ const projects = [
     title: "Weather & Analytics Dashboard",
     description:
       "Real-time weather application consuming REST APIs with responsive location search and temperature trends.",
-    image:
-      "https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=1000&auto=format&fit=crop&fm=webp",
+    role: "JavaScript Developer",
+    functionality: [
+      "Real-time weather data fetching consuming RESTful weather APIs",
+      "Instant city search with automatic coordinate geolocation",
+      "Multi-day forecast projections and humidity/wind index metrics",
+      "Cross-browser responsive styling with mobile-first layout",
+    ],
+    image: "/images/projects/weather.webp",
     tech: ["JavaScript", "REST API", "CSS3"],
     category: "Basic",
     categories: ["Basic"],
@@ -69,8 +99,14 @@ const projects = [
     title: "Eco-Track Web App",
     description:
       "Environmental sustainability tracking utility with local persistence, accessible form controls, and clean layout.",
-    image:
-      "https://images.unsplash.com/photo-1542601906970-3cf9eaf996f0?q=80&w=1000&auto=format&fit=crop&fm=webp",
+    role: "Web Developer",
+    functionality: [
+      "Daily personal carbon footprint and resource usage calculator",
+      "Client-side local persistence to track sustainability progress",
+      "Accessible form controls adhering to WCAG contrast standards",
+      "Actionable recommendations for energy and waste reduction",
+    ],
+    image: "/images/projects/eco-track.webp",
     tech: ["HTML5", "CSS3", "JavaScript"],
     category: "Basic",
     categories: ["Basic"],

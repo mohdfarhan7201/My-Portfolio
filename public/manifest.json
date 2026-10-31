@@ -1,7 +1,7 @@
 {
-  "name": "Mohd Farhan | Web Developer & SEO Executive",
+  "name": "Mohd Farhan | Full Stack Next.js Developer & SEO Specialist",
   "short_name": "Mohd Farhan",
-  "description": "Portfolio of Mohd Farhan - Web Developer and SEO Executive specializing in modern web applications, React, Next.js, and search optimization.",
+  "description": "Portfolio of Mohd Farhan - Full Stack Next.js & React Web Developer, Technical SEO Specialist building fast, search-dominant web apps and custom business websites.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
@@ -12,6 +12,11 @@
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
     }
   ]
 }

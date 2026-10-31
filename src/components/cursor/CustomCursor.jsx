@@ -20,7 +20,7 @@ function CustomCursor() {
 
     const onMouseMove = (e) => {
       mousePos.current = { x: e.clientX, y: e.clientY };
-      if (!visible) setVisible(true);
+      setVisible((prev) => (prev ? prev : true));
       if (!isMoving) {
         isMoving = true;
         requestRef.current = requestAnimationFrame(animate);

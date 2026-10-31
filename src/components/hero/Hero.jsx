@@ -41,6 +41,7 @@ function Hero() {
     <section
       ref={heroRef}
       id="home"
+      aria-label="Introduction & Overview"
       className="relative min-h-[85vh] sm:min-h-[92vh] w-full max-w-full overflow-hidden bg-black flex items-center px-4 sm:px-10 md:px-20 lg:px-28 pt-20 sm:pt-28 pb-12 sm:pb-16"
     >
       {/* Background Image with Parallax Mask */}
@@ -50,16 +51,19 @@ function Hero() {
           transform: `translate(${(pos.x - window.innerWidth / 2) * 0.012}px, ${(pos.y - window.innerHeight / 2) * 0.012}px)`,
         }}
       >
-        <img
-          src="/images/toji.webp"
-          width="1920"
-          height="1080"
-          className="h-full w-full object-cover md:object-center object-[70%_center] opacity-40 sm:opacity-45"
-          alt="Mohd Farhan - Web Developer and SEO Executive Portfolio Hero Background"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        />
+        <picture>
+          <source srcSet="/images/toji.webp" type="image/webp" />
+          <img
+            src="/images/toji.webp"
+            width="1920"
+            height="1080"
+            className="h-full w-full object-cover md:object-center object-[70%_center] opacity-40 sm:opacity-45"
+            alt="Mohd Farhan - Full Stack Next.js Web Developer and Technical SEO Specialist Portfolio Hero"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
       </div>
 
       {/* Dynamic Radial Spotlight Mask (Desktop Only) */}
@@ -80,20 +84,25 @@ function Hero() {
         ref={textRef}
         className="relative z-20 max-w-5xl flex flex-col items-start w-full"
       >
+        {/* Availability / Architecture Tag */}
         <div className="inline-flex items-center gap-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-3 sm:mb-6 max-w-full">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
           <span className="text-[9.5px] xs:text-[11px] sm:text-xs font-mono uppercase tracking-[1.5px] sm:tracking-[2.5px] text-zinc-300 font-accent truncate">
-            Full Stack Next.js Developer & SEO Specialist
+            Modern Web Architecture • Next.js • React • MERN
           </span>
         </div>
 
+        {/* Primary H1 with definitive professional keywords */}
         <h1 className="text-gradient text-[34px] xs:text-[44px] sm:text-[68px] md:text-[84px] lg:text-[96px] font-extrabold tracking-tight leading-[1] sm:leading-[0.92] font-heading select-none break-words w-full">
           MOHD FARHAN
+          <span className="block text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-normal text-zinc-300 mt-2.5 sm:mt-4">
+            Full Stack Web Developer &amp; Technical SEO Specialist
+          </span>
         </h1>
 
         <div className="mt-3.5 sm:mt-7 max-w-2xl">
           <p className="text-xs xs:text-sm sm:text-lg md:text-xl lg:text-2xl text-zinc-400 font-normal leading-relaxed">
-            Building <span className="text-white font-semibold">high-performance Next.js & React web applications</span>, custom business websites, and <span className="text-white font-semibold">search-dominant digital experiences</span> where fluid GSAP animations meet Technical SEO & Core Web Vitals.
+            Building <span className="text-white font-semibold">high-performance Next.js &amp; React web applications</span>, custom business websites, and <span className="text-white font-semibold">search-dominant digital experiences</span> where fluid GSAP animations meet Technical SEO &amp; Core Web Vitals.
           </p>
         </div>
 
@@ -101,7 +110,8 @@ function Hero() {
         <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-5 w-full sm:w-auto">
           <a
             href="#projects"
-            className="group relative px-6 py-3.5 sm:px-9 sm:py-4 overflow-hidden rounded-full border border-white/25 text-[11px] sm:text-xs font-bold uppercase tracking-[2.5px] sm:tracking-[3px] transition-all hover:border-white shadow-xl text-center active:scale-95"
+            aria-label="Explore featured web development and SEO projects"
+            className="group relative px-6 py-3.5 sm:px-9 sm:py-4 overflow-hidden rounded-full border border-white/25 text-[11px] sm:text-xs font-bold uppercase tracking-[2.5px] sm:tracking-[3px] transition-all hover:border-white shadow-xl text-center active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
           >
             <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
               Explore Featured Work
@@ -111,9 +121,10 @@ function Hero() {
 
           <a
             href="#services"
-            className="px-6 py-3.5 sm:px-8 sm:py-4 rounded-full border border-white/10 text-zinc-400 hover:text-white hover:border-white/30 text-[11px] sm:text-xs font-bold uppercase tracking-[2.5px] sm:tracking-[3px] transition-all text-center active:scale-95"
+            aria-label="View web development and technical SEO services"
+            className="px-6 py-3.5 sm:px-8 sm:py-4 rounded-full border border-white/10 text-zinc-400 hover:text-white hover:border-white/30 text-[11px] sm:text-xs font-bold uppercase tracking-[2.5px] sm:tracking-[3px] transition-all text-center active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
           >
-            Services & Solutions
+            Services &amp; Solutions
           </a>
 
           <div className="hidden sm:flex gap-3 items-center opacity-40 ml-2">

@@ -12,7 +12,6 @@ import {
   SiFramer,
   SiBootstrap,
   SiMongodb,
-  SiGit,
   SiGithub,
   SiVercel,
   SiGoogleanalytics,
@@ -104,7 +103,7 @@ function Skills() {
             Capabilities & Stack.
           </h2>
           <p className="text-zinc-300 text-xs sm:text-sm md:text-base mt-2.5 sm:mt-3 leading-relaxed">
-            Organized into specialized engineering and search optimization domains.
+            Organized into specialized engineering and search optimization domains. See these tools applied across <a href="#projects" className="text-white font-medium underline underline-offset-4 hover:text-emerald-400">selected portfolio projects</a> or review <a href="#services" className="text-white font-medium underline underline-offset-4 hover:text-emerald-400">available web services</a>.
           </p>
         </div>
 

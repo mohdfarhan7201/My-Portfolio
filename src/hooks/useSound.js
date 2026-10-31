@@ -9,7 +9,7 @@ export default function useSound() {
 
         const play = () => {
             audio.currentTime = 0;
-            audio.play().catch((err) => {
+            audio.play().catch(() => {
                 // Silent catch for interaction policy
                 console.log("Audio play blocked until user interaction.");
             });

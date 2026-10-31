@@ -106,9 +106,9 @@ function Experience() {
                   <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-400 font-accent">
                     Higher Education
                   </span>
-                  <h4 className="text-base sm:text-lg md:text-xl font-bold text-white font-heading">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-white font-heading">
                     Bachelor of Computer Applications (BCA)
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
@@ -134,9 +134,9 @@ function Experience() {
                   <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-400 font-accent">
                     Certification
                   </span>
-                  <h4 className="text-base sm:text-lg md:text-xl font-bold text-white font-heading">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-white font-heading">
                     Responsive Web Design
-                  </h4>
+                  </h3>
                 </div>
               </div>
 

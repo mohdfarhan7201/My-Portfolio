@@ -3,20 +3,18 @@
 
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /admin/
 
 # Search Engine Crawlers
 User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
-Allow: /images/
+Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-# AI & LLM Crawlers (Full Crawling & Indexing Allowed)
+# AI & Answer Engine Crawlers (Explicitly Allowed for AEO & AI Search)
 User-agent: GPTBot
 Allow: /
 

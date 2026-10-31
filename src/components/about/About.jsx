@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { FaBolt, FaMagnifyingGlass, FaLaptopCode, FaCheck } from "react-icons/fa6";
+import { FaBolt, FaMagnifyingGlass, FaLaptopCode, FaCheck, FaArrowRight } from "react-icons/fa6";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,16 +53,22 @@ function About() {
       icon: <FaLaptopCode className="text-white text-base" />,
       title: "Interactive Web Interfaces",
       desc: "Architecting responsive React & Next.js components with fluid GSAP micro-animations.",
+      link: "#skills",
+      linkText: "Explore stack",
     },
     {
       icon: <FaMagnifyingGlass className="text-white text-base" />,
       title: "Search Engine Optimization",
       desc: "Deep Technical & On-Page SEO, structured data, schema markup, and GSC audits.",
+      link: "#services",
+      linkText: "View SEO services",
     },
     {
       icon: <FaBolt className="text-white text-base" />,
       title: "Core Web Vitals & Speed",
       desc: "Optimizing bundle size, page rendering, image pipelines, and layout stability.",
+      link: "#projects",
+      linkText: "See live results",
     },
   ];
 
@@ -70,7 +76,8 @@ function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="py-12 sm:py-20 md:py-24 px-4 sm:px-10 md:px-20 lg:px-28 bg-black overflow-hidden relative"
+      aria-label="About Mohd Farhan"
+      className="py-12 sm:py-20 md:py-24 px-4 sm:px-10 md:px-20 lg:px-28 bg-black overflow-hidden relative border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
         {/* Left Column: Narrative */}
@@ -88,7 +95,23 @@ function About() {
           </p>
 
           <p className="mt-2.5 text-zinc-300 text-xs sm:text-sm md:text-base leading-relaxed font-normal">
-            I solve both sides of this equation: engineering pixel-perfect, responsive web experiences with modern tools like <span className="text-white font-medium">React, Next.js, and GSAP</span>, while ensuring every page structure is tuned to rank organically on search engines.
+            I solve both sides of this equation: engineering pixel-perfect, responsive web experiences with modern tools like{" "}
+            <a href="#skills" className="text-white font-medium underline underline-offset-4 hover:text-emerald-400 transition-colors">
+              React, Next.js, and GSAP
+            </a>
+            , while ensuring every page structure is tuned with{" "}
+            <a href="#services" className="text-white font-medium underline underline-offset-4 hover:text-emerald-400 transition-colors">
+              Technical SEO
+            </a>{" "}
+            to rank organically on search engines. Explore my{" "}
+            <a href="#projects" className="text-white font-medium underline underline-offset-4 hover:text-emerald-400 transition-colors">
+              featured portfolio projects
+            </a>{" "}
+            or check my{" "}
+            <a href="#experience" className="text-white font-medium underline underline-offset-4 hover:text-emerald-400 transition-colors">
+              career background
+            </a>
+            .
           </p>
 
           {/* Core Strengths Bento */}
@@ -105,10 +128,17 @@ function About() {
                   <h3 className="text-xs sm:text-sm font-semibold text-white mb-1 font-heading">
                     {item.title}
                   </h3>
-                  <p className="text-[11px] sm:text-xs text-zinc-300 leading-normal">
+                  <p className="text-[11px] sm:text-xs text-zinc-300 leading-normal mb-3">
                     {item.desc}
                   </p>
                 </div>
+                <a
+                  href={item.link}
+                  className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-mono text-zinc-400 group-hover:text-emerald-400 transition-colors mt-auto pt-2 border-t border-white/5"
+                >
+                  <span>{item.linkText}</span>
+                  <FaArrowRight className="text-[9px]" />
+                </a>
               </div>
             ))}
           </div>
@@ -148,12 +178,20 @@ function About() {
 };`}</code>
             </pre>
 
-            {/* Credential note */}
+            {/* Credential note with links */}
             <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-[10px] sm:text-[11px] text-zinc-500 font-mono">
-              <span className="flex items-center gap-1.5 text-zinc-400">
+              <a
+                href="#experience"
+                className="flex items-center gap-1.5 text-zinc-400 hover:text-white transition-colors"
+              >
                 <FaCheck className="text-emerald-400 text-xs" /> Shine Infosolutions Intern
-              </span>
-              <span>BCA Graduate (DDU)</span>
+              </a>
+              <a
+                href="#experience"
+                className="text-zinc-500 hover:text-zinc-300 transition-colors"
+              >
+                BCA Graduate (DDU)
+              </a>
             </div>
           </div>
         </div>

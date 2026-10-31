@@ -10,6 +10,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useEffect(() => {
+    // Respect user's motion preferences
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
     let lenis;
     let updateTicker;
 

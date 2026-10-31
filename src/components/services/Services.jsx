@@ -3,19 +3,12 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import {
   SiNextdotjs,
-  SiReact,
   SiNodedotjs,
-  SiMongodb,
-  SiTailwindcss,
   SiGreensock,
   SiGooglesearchconsole,
 } from "react-icons/si";
 import {
-  FaBolt,
-  FaMagnifyingGlass,
-  FaLaptopCode,
   FaGlobe,
-  FaServer,
   FaLocationDot,
   FaCheck,
   FaArrowRight,
@@ -38,6 +31,8 @@ const services = [
       "Next.js Performance Optimization & Bundle Splitting",
     ],
     tags: ["Next.js Developer", "React JS", "SSR / SSG", "App Router", "Performance"],
+    actionLink: "#projects",
+    actionText: "View Next.js projects",
   },
   {
     badge: "End-to-End Solutions",
@@ -53,6 +48,8 @@ const services = [
       "Third-party API Integration & Webhooks",
     ],
     tags: ["MERN Stack", "Node.js", "Express.js", "MongoDB", "REST APIs"],
+    actionLink: "#projects",
+    actionText: "View full stack work",
   },
   {
     badge: "Organic Search Growth",
@@ -68,6 +65,8 @@ const services = [
       "JSON-LD Schema Markup, XML Sitemaps & Robots.txt",
     ],
     tags: ["Technical SEO", "SEO Specialist", "Core Web Vitals", "GSC", "Indexing"],
+    actionLink: "#faq",
+    actionText: "Read SEO approach in FAQ",
   },
   {
     badge: "Interactive Frontend",
@@ -83,6 +82,8 @@ const services = [
       "Cross-Browser Compatibility & Accessibility (WCAG)",
     ],
     tags: ["Tailwind CSS", "GSAP Motion", "Framer Motion", "Interactive UI"],
+    actionLink: "#projects",
+    actionText: "See animation samples",
   },
   {
     badge: "Regional Reach",
@@ -98,6 +99,8 @@ const services = [
       "Modern Web Applications & Global Responsive Standards",
     ],
     tags: ["Gorakhpur", "Lucknow", "Delhi NCR", "Web Architecture", "Next.js"],
+    actionLink: "#contact",
+    actionText: "Inquire for local services",
   },
   {
     badge: "Conversion-Focused",
@@ -113,6 +116,8 @@ const services = [
       "Analytics & Conversion Tracking Setup (GA4 / GSC)",
     ],
     tags: ["Business Websites", "Landing Pages", "Speed Optimization", "Conversion"],
+    actionLink: "#contact",
+    actionText: "Discuss website build",
   },
 ];
 
@@ -164,21 +169,22 @@ function Services() {
     <section
       ref={sectionRef}
       id="services"
+      aria-label="Web Development and Technical SEO Services"
       className="py-16 sm:py-24 md:py-28 px-4 sm:px-10 md:px-20 lg:px-28 bg-black relative w-full overflow-hidden border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Header */}
         <div ref={headerRef} className="max-w-3xl mb-12 sm:mb-16">
           <p className="text-zinc-400 tracking-[3px] sm:tracking-[6px] uppercase text-[10px] sm:text-xs mb-3 font-accent font-medium">
-            Services & Expertise
+            Services &amp; Expertise
           </p>
 
           <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gradient font-heading leading-tight mb-4 break-words">
-            Web Development & SEO Services.
+            Web Development &amp; SEO Services.
           </h2>
 
           <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed">
-            From modern <span className="text-white font-medium">Next.js & React web applications</span> to deep <span className="text-white font-medium">Technical SEO & Core Web Vitals optimization</span>, discover full-cycle digital development tailored to rank, scale, and convert.
+            From modern <a href="#skills" className="text-white font-medium underline underline-offset-4 hover:text-emerald-400">Next.js &amp; React web applications</a> to deep <a href="#faq" className="text-white font-medium underline underline-offset-4 hover:text-emerald-400">Technical SEO &amp; Core Web Vitals optimization</a>, discover full-cycle digital development tailored to rank, scale, and convert. Check my <a href="#projects" className="text-white font-medium underline underline-offset-4 hover:text-emerald-400">recent projects</a> or <a href="#contact" className="text-white font-medium underline underline-offset-4 hover:text-emerald-400">get in touch</a>.
           </p>
         </div>
 
@@ -222,16 +228,29 @@ function Services() {
                 </div>
               </div>
 
-              {/* Tag Cloud */}
-              <div className="border-t border-white/5 pt-4 flex flex-wrap gap-1.5 mt-auto">
-                {service.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-[10px] font-mono text-zinc-400 bg-white/[0.03] px-2 py-0.5 rounded border border-white/5"
+              <div>
+                {/* Contextual Link */}
+                <div className="pt-2 mb-4">
+                  <a
+                    href={service.actionLink}
+                    className="inline-flex items-center gap-1.5 text-xs font-mono text-zinc-400 hover:text-white transition-colors"
                   >
-                    #{tag}
-                  </span>
-                ))}
+                    <span>{service.actionText}</span>
+                    <FaArrowRight className="text-[10px]" />
+                  </a>
+                </div>
+
+                {/* Tag Cloud */}
+                <div className="border-t border-white/5 pt-4 flex flex-wrap gap-1.5 mt-auto">
+                  {service.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-[10px] font-mono text-zinc-400 bg-white/[0.03] px-2 py-0.5 rounded border border-white/5"
+                    >
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -242,19 +261,20 @@ function Services() {
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-mono uppercase tracking-[2px] text-emerald-400 mb-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              Regional & Remote Availability
+              Regional &amp; Remote Availability
             </span>
-            <h4 className="text-xl sm:text-2xl font-bold text-white font-heading">
-              Serving Businesses in Gorakhpur, Lucknow, Delhi NCR & Globally
-            </h4>
+            <h3 className="text-xl sm:text-2xl font-bold text-white font-heading">
+              Serving Businesses in Gorakhpur, Lucknow, Delhi NCR &amp; Globally
+            </h3>
             <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed mt-2">
-              Building high-performance <strong className="text-zinc-200">Next.js web applications</strong>, responsive <strong className="text-zinc-200">custom web platforms</strong>, and ranking websites with <strong className="text-zinc-200">Technical & Local SEO</strong> across Uttar Pradesh, Delhi NCR, and beyond. Let’s collaborate on your next growth milestone.
+              Building high-performance <strong className="text-zinc-200">Next.js web applications</strong>, responsive <strong className="text-zinc-200">custom web platforms</strong>, and ranking websites with <strong className="text-zinc-200">Technical &amp; Local SEO</strong> across Uttar Pradesh, Delhi NCR, and worldwide. Let’s collaborate on your next growth milestone.
             </p>
           </div>
 
           <a
             href="#contact"
-            className="inline-flex items-center gap-3 px-6 py-3.5 sm:px-8 sm:py-4 rounded-full border border-white/20 bg-white text-black hover:bg-zinc-200 text-xs sm:text-sm font-bold uppercase tracking-wider font-accent transition-all duration-300 shadow-xl whitespace-nowrap"
+            aria-label="Contact Mohd Farhan for web development and SEO projects"
+            className="inline-flex items-center gap-3 px-6 py-3.5 sm:px-8 sm:py-4 rounded-full border border-white/20 bg-white text-black hover:bg-zinc-200 text-xs sm:text-sm font-bold uppercase tracking-wider font-accent transition-all duration-300 shadow-xl whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
           >
             <span>Let’s Connect</span>
             <FaArrowRight className="text-xs" />
