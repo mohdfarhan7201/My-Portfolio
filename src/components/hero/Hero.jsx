@@ -42,7 +42,7 @@ function Hero() {
       ref={heroRef}
       id="home"
       aria-label="Introduction & Overview"
-      className="relative min-h-[85vh] sm:min-h-[92vh] w-full max-w-full overflow-hidden bg-black flex items-center px-4 sm:px-8 md:px-12 lg:px-16 pt-20 sm:pt-28 pb-12 sm:pb-16"
+      className="relative min-h-[85vh] sm:min-h-[92vh] w-full max-w-full overflow-hidden bg-black flex items-center px-4 sm:px-8 md:px-12 lg:px-24 pt-20 sm:pt-28 pb-12 sm:pb-16"
     >
       {/* Background Image with Parallax Mask */}
       <div
