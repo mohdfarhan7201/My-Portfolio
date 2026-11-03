@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import ParticleImageReveal from "./ParticleImageReveal";
 
 function Hero() {
   const heroRef = useRef(null);
   const textRef = useRef(null);
-  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const particleRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -18,75 +19,42 @@ function Hero() {
     return () => ctx.revert();
   }, []);
 
-  useEffect(() => {
-    if (window.matchMedia("(pointer: coarse)").matches) return;
-
-    let rafId;
-    const move = (e) => {
-      if (rafId) return;
-      rafId = requestAnimationFrame(() => {
-        setPos({ x: e.clientX, y: e.clientY });
-        rafId = null;
-      });
-    };
-
-    window.addEventListener("mousemove", move, { passive: true });
-    return () => {
-      window.removeEventListener("mousemove", move);
-      if (rafId) cancelAnimationFrame(rafId);
-    };
-  }, []);
-
   return (
     <section
       ref={heroRef}
       id="home"
       aria-label="Introduction & Overview"
+      onPointerEnter={() => particleRef.current?.reveal()}
+      onPointerLeave={() => particleRef.current?.disperse()}
       className="relative min-h-[85vh] sm:min-h-[92vh] w-full max-w-full overflow-hidden bg-black flex items-center px-4 sm:px-8 md:px-12 lg:px-24 pt-20 sm:pt-28 pb-12 sm:pb-16"
     >
-      {/* Background Image with Parallax Mask */}
-      <div
-        className="absolute inset-0 z-0 transition-transform duration-100 ease-out pointer-events-none"
-        style={{
-          transform: `translate(${(pos.x - window.innerWidth / 2) * 0.012}px, ${(pos.y - window.innerHeight / 2) * 0.012}px)`,
-        }}
-      >
-        <picture>
-          <source srcSet="/images/toji.webp" type="image/webp" />
-          <img
-            src="/images/toji.webp"
-            width="1920"
-            height="1080"
-            className="h-full w-full object-cover md:object-center object-[70%_center] opacity-40 sm:opacity-45"
-            alt="Mohd Farhan - Full Stack Next.js Web Developer and Technical SEO Specialist Portfolio Hero"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </picture>
-      </div>
-
-      {/* Dynamic Radial Spotlight Mask (Desktop Only) */}
-      <div
-        className="absolute inset-0 z-10 pointer-events-none hidden md:block"
-        style={{
-          backgroundImage: "url(/images/toji.webp)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          filter: "grayscale(1) brightness(0.35)",
-          maskImage: `radial-gradient(circle 260px at ${pos.x}px ${pos.y}px, transparent 0%, black 100%)`,
-          WebkitMaskImage: `radial-gradient(circle 260px at ${pos.x}px ${pos.y}px, transparent 0%, black 100%)`,
-        }}
+      {/* Interactive WebGPU + Motion Particle Image Reveal */}
+      <ParticleImageReveal
+        ref={particleRef}
+        triggerRef={heroRef}
+        className="absolute inset-0 z-0 pointer-events-auto"
       />
 
+      {/* Accessible semantic hero image for SEO, bots, and screen readers */}
+      <div className="sr-only">
+        <img
+          src="/images/toji.webp"
+          width="1920"
+          height="1080"
+          alt="Mohd Farhan - Full Stack Next.js Web Developer and Technical SEO Specialist Portfolio Hero"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+
       {/* Main Content Container aligned with site grid */}
-      <div className="max-w-7xl mx-auto w-full relative z-20">
+      <div className="max-w-7xl mx-auto w-full relative z-20 pointer-events-none">
         <div
           ref={textRef}
-          className="max-w-4xl flex flex-col items-start w-full"
+          className="max-w-4xl flex flex-col items-start w-full pointer-events-none"
         >
           {/* Availability / Architecture Tag */}
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-3 sm:mb-6 max-w-full">
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-3 sm:mb-6 max-w-full pointer-events-auto">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
             <span className="text-[9.5px] xs:text-[11px] sm:text-xs font-mono uppercase tracking-[1.5px] sm:tracking-[2.5px] text-zinc-300 font-accent truncate">
               Modern Web Architecture • Next.js • React • MERN
@@ -94,7 +62,7 @@ function Hero() {
           </div>
 
           {/* Primary H1 with balanced two-line subtitle on desktop */}
-          <h1 className="text-gradient text-[34px] xs:text-[44px] sm:text-[68px] md:text-[84px] lg:text-[96px] font-extrabold tracking-tight leading-[1] sm:leading-[0.92] font-heading select-none break-words w-full">
+          <h1 className="text-gradient text-[34px] xs:text-[44px] sm:text-[68px] md:text-[84px] lg:text-[96px] font-extrabold tracking-tight leading-[1] sm:leading-[0.92] font-heading select-none break-words w-full pointer-events-none">
             MOHD FARHAN
             <span className="block text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-normal text-zinc-300 mt-2.5 sm:mt-4 leading-tight sm:leading-snug">
               Full Stack Web Developer &amp; <br className="hidden sm:inline" />
@@ -102,14 +70,14 @@ function Hero() {
             </span>
           </h1>
 
-          <div className="mt-3.5 sm:mt-6 max-w-2xl">
+          <div className="mt-3.5 sm:mt-6 max-w-2xl pointer-events-none">
             <p className="text-xs xs:text-sm sm:text-lg md:text-xl lg:text-2xl text-zinc-400 font-normal leading-relaxed">
               Building <span className="text-white font-semibold">high-performance Next.js &amp; React web applications</span>, custom business websites, and <span className="text-white font-semibold">search-dominant digital experiences</span> where fluid GSAP animations meet Technical SEO &amp; Core Web Vitals.
             </p>
           </div>
 
           {/* Action CTAs: Responsive Stack on Mobile */}
-          <div className="mt-6 sm:mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-5 w-full sm:w-auto">
+          <div className="mt-6 sm:mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-5 w-full sm:w-auto pointer-events-auto">
             <a
               href="#projects"
               aria-label="Explore featured web development and SEO projects"
