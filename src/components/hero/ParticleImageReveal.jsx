@@ -497,7 +497,8 @@ const ParticleImageReveal = forwardRef(function ParticleImageReveal(
       onPointerLeave={disperse}
       onClick={toggle}
       data-revealed={isHovered ? "true" : "false"}
-      className={`relative w-full h-full overflow-hidden select-none cursor-pointer ${className}`}
+      style={{ position: "absolute", inset: 0 }}
+      className={`w-full h-full overflow-hidden select-none cursor-pointer ${className}`}
       aria-label="Interactive Toji particle reveal. Hover to assemble, leave to disperse."
       role="region"
     >
